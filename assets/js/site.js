@@ -103,18 +103,17 @@
     });
   });
 
-  /* ------------------------------------------------------- quote form */
+  /* ------------------------------------------------------- Netlify quote form */
   var leadForm = document.getElementById('lead-form');
   if (leadForm) {
-    leadForm.addEventListener('submit', function (e) {
+    leadForm.addEventListener('submit', async function (e) {
       e.preventDefault();
       var feedback = document.getElementById('form-feedback');
+      var submitButton = leadForm.querySelector('button[type="submit"]');
       var name = document.getElementById('customer-name').value.trim();
       var phone = document.getElementById('customer-phone').value.trim();
       var area = document.getElementById('customer-area').value.trim();
       var service = document.getElementById('service-select').value;
-      var notes = document.getElementById('customer-notes').value.trim();
-      var redirect = leadForm.getAttribute('data-thank-you');
 
       if (!name || !phone || !area) {
         feedback.textContent = 'Please fill in your name, phone number and suburb so we can quote you fast.';
@@ -126,20 +125,39 @@
         trackConversion('generate_lead', { service_selected: service, suburb: area });
       }
 
-      var msg = 'Hello Vincent K Plumbers,\n' +
-        'Name: ' + name + '\n' +
-        'Phone: ' + phone + '\n' +
-        'Area: ' + area + '\n' +
-        'Service Needed: ' + service +
-        (notes ? '\nDetails: ' + notes : '');
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.setAttribute('aria-busy', 'true');
+        submitButton.classList.add('opacity-60', 'cursor-wait');
+      }
+      feedback.textContent = 'Sending your quote request...';
+      feedback.className = 'text-xs font-semibold rounded-lg p-3 bg-sky-50 text-sky-800 border border-sky-200 block';
 
-      feedback.innerHTML = 'Thank you, <strong>' + name.replace(/[<>&]/g, '') +
-        '</strong>! Opening WhatsApp to send your request directly to Vincent K Plumbers, or call us now on ' +
-        '<a href="tel:+27681343276" class="underline font-bold">068 134 3276</a>.';
-      feedback.className = 'text-xs font-semibold rounded-lg p-3 bg-emerald-50 text-emerald-800 border border-emerald-200 block';
+      try {
+        var formData = new FormData(leadForm);
+        var body = new URLSearchParams();
+        formData.forEach(function (value, key) { body.append(key, value); });
 
-      window.open('https://wa.me/27681343276?text=' + encodeURIComponent(msg), '_blank', 'noopener,noreferrer');
-      if (redirect) window.setTimeout(function () { window.location.href = redirect; }, 1200);
+        var response = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body.toString()
+        });
+        if (!response.ok) throw new Error('Netlify form submission failed');
+
+        feedback.textContent = 'Thank you, ' + name + '! Your quote request has been sent. Vincent K Plumbers will contact you shortly. You can also call 068 134 3276.';
+        feedback.className = 'text-xs font-semibold rounded-lg p-3 bg-emerald-50 text-emerald-800 border border-emerald-200 block';
+        leadForm.reset();
+      } catch (error) {
+        feedback.textContent = 'We could not send your request right now. Please call or WhatsApp 068 134 3276.';
+        feedback.className = 'text-xs font-semibold rounded-lg p-3 bg-red-50 text-red-700 border border-red-200 block';
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.removeAttribute('aria-busy');
+          submitButton.classList.remove('opacity-60', 'cursor-wait');
+        }
+      }
     });
   }
 
