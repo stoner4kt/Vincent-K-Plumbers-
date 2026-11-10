@@ -53,4 +53,4 @@ Photos live at 1200px max on the long edge with a matching `-640.jpg` sibling us
 After adding a photo, generate the thumbnail, then reference both in the `<img srcset>`.
 
 Google Business Profile: https://share.google/Ruq5u5RT56MqOVg0n
-Site URL used in metadata: https://vincentkplumbers.co.za
+Site URL used in metadata: https://vincentplumbing.co.za
