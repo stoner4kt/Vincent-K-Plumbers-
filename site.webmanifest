@@ -1,0 +1,14 @@
+{
+  "name": "Vincent K Plumbers",
+  "short_name": "VK Plumbers",
+  "description": "Plumbing, gas geysers, leak detection and paving in Midrand and Johannesburg.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1623",
+  "theme_color": "#0B1623",
+  "icons": [
+    { "src": "images/brand/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "images/brand/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "images/brand/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
