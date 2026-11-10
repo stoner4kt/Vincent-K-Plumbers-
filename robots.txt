@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vincentkplumbers.co.za/sitemap.xml
+Sitemap: https://vincentplumbing.co.za/sitemap.xml
