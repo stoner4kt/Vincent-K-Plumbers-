@@ -52,5 +52,5 @@ footer so nothing is orphaned.
 Photos live at 1200px max on the long edge with a matching `-640.jpg` sibling used by `srcset`.
 After adding a photo, generate the thumbnail, then reference both in the `<img srcset>`.
 
-Google Business Profile: https://share.google/Ruq5u5RT56MqOVg0n
+Google Business Profile: https://share.google/71GsegnOVWnSnEVxC
 Site URL used in metadata: https://vincentplumbing.co.za
