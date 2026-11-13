@@ -49,16 +49,22 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css" />
   <link rel="preload" as="image" href="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.jpg" imagesrcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.jpg 1200w" imagesizes="(min-width: 1024px) 45vw, 100vw" fetchpriority="high" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true, 'send_page_view': true });
-    function trackConversion(eventName, details) {
-      if (typeof gtag === 'function') {
+    var VKP_GA4_ID = '[GA4-MEASUREMENT-ID]';
+    if (VKP_GA4_ID.indexOf('[GA4') !== 0) {
+      (function (w, d, s) {
+        var g = d.createElement(s); g.async = true;
+        g.src = 'https://www.googletagmanager.com/gtag/js?id=' + VKP_GA4_ID;
+        var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(g, f);
+      })(window, document, 'script');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
+      function trackConversion(eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
@@ -308,6 +314,7 @@
   </script>
 </head>
 <body class="antialiased selection:bg-sky-600 selection:text-white">
+<body class="antialiased selection:bg-sky-600 selection:text-white">
 
   <div class="bg-[#07111C] text-slate-300 text-xs border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
@@ -344,7 +351,10 @@
   <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-3 group shrink-0" aria-label="Vincent K Plumbers home">
-        <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-12 h-12 shrink-0 rounded-xl bg-white object-contain p-0.5 ring-1 ring-slate-200 group-hover:scale-105 transition-transform" />
+        <picture>
+    <source type="image/webp" src="images/brand/logo.webp" />
+    <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-12 h-12 shrink-0 rounded-xl bg-white object-contain p-0.5 ring-1 ring-slate-200 group-hover:scale-105 transition-transform" />
+    </picture>
         <span class="hidden sm:block">
           <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 block leading-none">Vincent K <span class="text-sky-600">Plumbers</span></span>
           <span class="text-[11px] font-medium text-slate-500 tracking-wide uppercase">Midrand &amp; Johannesburg</span>
@@ -357,24 +367,30 @@
             Services
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[34rem]">
-            <ul class="bg-white rounded-2xl border border-slate-200 shadow-2xl p-2 grid grid-cols-1 gap-0.5">
-            <li><a href="gas-geyser-installation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Gas Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Gas Geysers in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="geyser-replacement-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Replacement & Repair</span><span class="block text-xs text-slate-500 mt-0.5">Geyser Replacement in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="plumbing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L3 3l3 1.5v1.409l4.26 4.26m-1.745 1.437L9 12.75l1.5 1.5m-3.164-1.421l-.001.001"/></svg></span><span><span class="block text-sm font-bold text-slate-900">General Plumbing & Repairs</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="leak-detection-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Leak Detection</span><span class="block text-xs text-slate-500 mt-0.5">Leak Detection in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="paving-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Paving & Brick Laying</span><span class="block text-xs text-slate-500 mt-0.5">Paving in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="irrigation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-6m0 0a3 3 0 00-3-3H4m8 3a3 3 0 013-3h5M9 3l1.5 3M15 3l-1.5 3M12 2v4"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Irrigation Systems</span><span class="block text-xs text-slate-500 mt-0.5">Irrigation in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="water-purification-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.342.436 7.5 1.2v6.3c0 4.5-3.2 8.4-7.5 10.5-4.3-2.1-7.5-6-7.5-10.5V4.2C6.658 3.436 9.245 3 12 3z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Water Purification</span><span class="block text-xs text-slate-500 mt-0.5">Water Purification in Midrand &amp; Johannesburg</span></span></a></li>
+          <div class="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[38rem]">
+            <ul class="bg-white rounded-2xl border border-slate-200 shadow-2xl p-2 grid grid-cols-2 gap-0.5">
+            <li><a href="blocked-drains-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25A6.75 6.75 0 0012 15.75a6.75 6.75 0 000-13.5zM12 15.75v6M8.25 21.75h7.5"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Blocked Drains</span><span class="block text-xs text-slate-500 mt-0.5">Drain clearing in Johannesburg</span></span></a></li>
+            <li><a href="leak-detection-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Leak Detection</span><span class="block text-xs text-slate-500 mt-0.5">Find hidden leaks fast</span></span></a></li>
+            <li><a href="geyser-repair-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Repair</span><span class="block text-xs text-slate-500 mt-0.5">Electric &amp; gas geysers</span></span></a></li>
+            <li><a href="geyser-replacement-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Replacement</span><span class="block text-xs text-slate-500 mt-0.5">With drip trays &amp; valves</span></span></a></li>
+            <li><a href="gas-geyser-installation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Gas Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Load-shedding-proof gas</span></span></a></li>
+            <li><a href="solar-geyser-installation-gauteng.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m6.366-.366l-2.12 2.12M21 12h-3m.366 6.366l-2.12-2.12M12 21v-3m-6.366.366l2.12-2.12M3 12h3m-.366-6.366l2.12 2.12"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Solar Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Solar &amp; retrofits</span></span></a></li>
+            <li><a href="burst-pipe-repair-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25a7.75 7.75 0 00-7.75 7.75c0 4.5 7.75 12.75 7.75 12.75S19.75 14.5 19.75 10A7.75 7.75 0 0012 2.25z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Burst Pipe Repair</span><span class="block text-xs text-slate-500 mt-0.5">Emergency pipe repairs</span></span></a></li>
+            <li><a href="bathroom-renovations-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Bathroom Renovations</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing for new bathrooms</span></span></a></li>
+            <li><a href="waterproofing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Waterproofing</span><span class="block text-xs text-slate-500 mt-0.5">Damp &amp; waterproofing</span></span></a></li>
+            <li><a href="plumbing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L3 3l3 1.5v1.409l4.26 4.26m-1.745 1.437L9 12.75l1.5 1.5m-3.164-1.421l-.001.001"/></svg></span><span><span class="block text-sm font-bold text-slate-900">General Plumbing &amp; Repairs</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing repairs &amp; installs</span></span></a></li>
+            <li><a href="paving-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Paving &amp; Brick Laying</span><span class="block text-xs text-slate-500 mt-0.5">Driveways &amp; pool decks</span></span></a></li>
+            <li><a href="irrigation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-6m0 0a3 3 0 00-3-3H4m8 3a3 3 0 013-3h5M9 3l1.5 3M15 3l-1.5 3M12 2v4"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Irrigation Systems</span><span class="block text-xs text-slate-500 mt-0.5">Lawn &amp; garden irrigation</span></span></a></li>
+            <li><a href="water-purification-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.342.436 7.5 1.2v6.3c0 4.5-3.2 8.4-7.5 10.5-4.3-2.1-7.5-6-7.5-10.5V4.2C6.658 3.436 9.245 3 12 3z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Water Purification</span><span class="block text-xs text-slate-500 mt-0.5">Filtered drinking water</span></span></a></li>
             </ul>
           </div>
         </div>
         <a href="gallery.html" class="hover:text-sky-600 transition-colors text-sky-700">Gallery</a>
-        <a href="index.html#why-us" class="hover:text-sky-600 transition-colors">Why Choose Us</a>
-        <a href="index.html#areas" class="hover:text-sky-600 transition-colors">Areas Served</a>
+        <a href="guides.html" class="hover:text-sky-600 transition-colors">Guides</a>
+        <a href="service-areas.html" class="hover:text-sky-600 transition-colors">Areas</a>
         <a href="index.html#reviews" class="hover:text-sky-600 transition-colors">Reviews</a>
-        <a href="index.html#faq" class="hover:text-sky-600 transition-colors">FAQ</a>
-        <a href="index.html#contact" class="hover:text-sky-600 transition-colors">Contact</a>
+        <a href="about.html" class="hover:text-sky-600 transition-colors">About</a>
+        <a href="contact.html" class="hover:text-sky-600 transition-colors">Contact</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-3 shrink-0">
@@ -396,19 +412,26 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-1 shadow-xl max-h-[80vh] overflow-y-auto">
       <p class="px-3 pt-1 pb-1 text-[11px] font-bold uppercase tracking-widest text-slate-400">Services</p>
-      <a href="gas-geyser-installation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Gas Geyser Installation</a>
-      <a href="geyser-replacement-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Replacement & Repair</a>
-      <a href="plumbing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">General Plumbing & Repairs</a>
+      <a href="blocked-drains-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Blocked Drains</a>
       <a href="leak-detection-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Leak Detection</a>
+      <a href="geyser-repair-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Repair</a>
+      <a href="geyser-replacement-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Replacement</a>
+      <a href="gas-geyser-installation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Gas Geyser Installation</a>
+      <a href="solar-geyser-installation-gauteng.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Solar Geyser Installation</a>
+      <a href="burst-pipe-repair-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Burst Pipe Repair</a>
+      <a href="bathroom-renovations-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Bathroom Renovations</a>
+      <a href="waterproofing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Waterproofing</a>
+      <a href="plumbing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">General Plumbing & Repairs</a>
       <a href="paving-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Paving & Brick Laying</a>
       <a href="irrigation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Irrigation Systems</a>
       <a href="water-purification-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Water Purification</a>
       <div class="h-px bg-slate-100 my-2"></div>
       <a href="gallery.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Project Gallery</a>
-      <a href="index.html#why-us" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Why Choose Us</a>
-      <a href="index.html#areas" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Areas Served</a>
-      <a href="index.html#faq" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">FAQ</a>
-      <a href="index.html#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Contact &amp; Map</a>
+      <a href="guides.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Guides &amp; Tips</a>
+      <a href="service-areas.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Areas Served</a>
+      <a href="index.html#reviews" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Reviews</a>
+      <a href="about.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">About Us</a>
+      <a href="contact.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Contact &amp; Map</a>
       <div class="pt-2 border-t border-slate-100 flex gap-2">
         <a href="tel:+27681343276" onclick="trackConversion('phone_click', {location: 'mobile_menu'})" class="flex-1 text-center py-2.5 rounded-xl bg-slate-900 text-white font-bold text-sm">Call 068 134 3276</a>
         <a href="index.html#quote-form" class="mobile-nav-link flex-1 text-center py-2.5 rounded-xl bg-orange-600 text-white font-bold text-sm">Get Quote</a>
@@ -416,7 +439,9 @@
     </div>
   </header>
 
+  
   <main id="top">
+
 
     <section class="relative hero-bg text-white overflow-hidden">
       <div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
@@ -459,140 +484,200 @@
         </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Wall-mounted gas geyser and hot water cylinder installed outside a Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-01-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Wall-mounted gas geyser and hot water cylinder installed outside a Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Wall-mounted gas geyser and hot water cylinder installed outside a Midrand home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas water heater fitted under a weather awning on a face-brick wall in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-02.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-02-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas water heater fitted under a weather awning on a face-brick wall in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas water heater fitted under a weather awning on a face-brick wall in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Outdoor gas geyser installed on a face-brick wall in Klipfontein View" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-03.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-03-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Outdoor gas geyser installed on a face-brick wall in Klipfontein View" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Outdoor gas geyser installed on a face-brick wall in Klipfontein View</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser and storage cylinder plumbed neatly side by side at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-04.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-04-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser and storage cylinder plumbed neatly side by side at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas geyser and storage cylinder plumbed neatly side by side at a Johannesburg home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Close-up of a gas water heater with neat copper pipework and isolator valve" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-05.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-05-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Close-up of a gas water heater with neat copper pipework and isolator valve" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Close-up of a gas water heater with neat copper pipework and isolator valve</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New outdoor gas water heater installed on a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-06.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-06-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New outdoor gas water heater installed on a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">New outdoor gas water heater installed on a boundary wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser fitted with flue, overflow pipe and drainage outside" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-07.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-07-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser fitted with flue, overflow pipe and drainage outside" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas geyser fitted with flue, overflow pipe and drainage outside</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas team installing a geyser with new copper pipework at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-08.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-08-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas team installing a geyser with new copper pipework at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas team installing a geyser with new copper pipework at a Johannesburg home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-09.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Technician beside a completed gas geyser installation in Klipfontein View, Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-09.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-09-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-09.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Technician beside a completed gas geyser installation in Klipfontein View, Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Technician beside a completed gas geyser installation in Klipfontein View, Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Coiled geyser pipework being fitted during a gas installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-10.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-10-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Coiled geyser pipework being fitted during a gas installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Coiled geyser pipework being fitted during a gas installation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-11.jpg 539w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="539" height="1200" alt="Neat gas and water pipe routing along an exterior wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-11.webp 539w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-11-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-11.jpg 539w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="539" height="1200" alt="Neat gas and water pipe routing along an exterior wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Neat gas and water pipe routing along an exterior wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-12.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser mounted on a brick wall behind security bars in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-12.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-12-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-12.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas geyser mounted on a brick wall behind security bars in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas geyser mounted on a brick wall behind security bars in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-13.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New gas pipe drop and isolator valve fitted to a brick wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-13.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-13-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-13.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New gas pipe drop and isolator valve fitted to a brick wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">New gas pipe drop and isolator valve fitted to a brick wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-14.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas cylinder enclosure with copper feed pipe installed at a property" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-14.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-14-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-14.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Gas cylinder enclosure with copper feed pipe installed at a property" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas cylinder enclosure with copper feed pipe installed at a property</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-15.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="LP gas cylinder and regulator checked before a gas geyser installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-15.webp 675w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-15-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-15.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="LP gas cylinder and regulator checked before a gas geyser installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">LP gas cylinder and regulator checked before a gas geyser installation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-16.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Gas regulator, hose and tools ready for connection" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-16.webp 675w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-16-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-16.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Gas regulator, hose and tools ready for connection" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Gas regulator, hose and tools ready for connection</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-17.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Solar geyser system installed on a tiled roof in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-17.webp 1200w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-17-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-17.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Solar geyser system installed on a tiled roof in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Solar geyser system installed on a tiled roof in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-18.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Team installing a solar geyser on a Johannesburg rooftop" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-18.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-18-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-18.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Team installing a solar geyser on a Johannesburg rooftop" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Team installing a solar geyser on a Johannesburg rooftop</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-19.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Indoor gas geyser installation during a home renovation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-19.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-19-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-19.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Indoor gas geyser installation during a home renovation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Indoor gas geyser installation during a home renovation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20.jpg">
-          <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-20.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Technician working inside the ceiling to connect geyser pipework" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20-640.webp 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-20.webp 900w" />
+    <img src="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20-640.jpg" srcset="images/gas-geyser-installation/gas-geyser-installation-johannesburg-20-640.jpg 640w, images/gas-geyser-installation/gas-geyser-installation-johannesburg-20.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Technician working inside the ceiling to connect geyser pipework" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
@@ -614,140 +699,200 @@
         </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-01.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-01-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-01-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New PVC drainage pipes laid in a trench on a Johannesburg property" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-01-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-01.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-01-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-01-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New PVC drainage pipes laid in a trench on a Johannesburg property" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">New PVC drainage pipes laid in a trench on a Johannesburg property</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-02.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-02-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-02-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Stormwater, pool and drainage pipe installation in progress" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-02-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-02.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-02-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-02-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Stormwater, pool and drainage pipe installation in progress" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Stormwater, pool and drainage pipe installation in progress</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-03.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-03-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-03-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Trench dug and prepared for new water and drainage lines" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-03-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-03.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-03-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-03-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Trench dug and prepared for new water and drainage lines" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Trench dug and prepared for new water and drainage lines</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-04.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-04-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-04-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber working in a trench to replace a damaged water line" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-04-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-04.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-04-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-04-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber working in a trench to replace a damaged water line" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Plumber working in a trench to replace a damaged water line</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-05.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-05-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-05-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Repair trench prepared for pipe replacement beside a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-05-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-05.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-05-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-05-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Repair trench prepared for pipe replacement beside a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Repair trench prepared for pipe replacement beside a boundary wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-06.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-06-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-06-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool plumbing and drainage completed alongside new paving" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-06-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-06.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-06-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-06-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool plumbing and drainage completed alongside new paving" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool plumbing and drainage completed alongside new paving</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-07.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-07-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-07-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="JoJo water tank and booster pump connection completed by our plumbing team" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-07-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-07.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-07-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-07-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="JoJo water tank and booster pump connection completed by our plumbing team" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">JoJo water tank and booster pump connection completed by our plumbing team</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-08.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-08-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-08-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Newly plumbed bathroom with tiled shower, basin and toilet" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-08-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-08.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-08-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-08-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Newly plumbed bathroom with tiled shower, basin and toilet" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Newly plumbed bathroom with tiled shower, basin and toilet</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-09.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-09-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-09-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-09.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber fitting bathroom fixtures in a compact Midrand bathroom" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-09-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-09.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-09-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-09-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-09.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber fitting bathroom fixtures in a compact Midrand bathroom" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Plumber fitting bathroom fixtures in a compact Midrand bathroom</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-10.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-10-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-10-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Stone counter basin and mixer tap installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-10-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-10.webp 900w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-10-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-10-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Stone counter basin and mixer tap installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Stone counter basin and mixer tap installation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/plumbing/plumbing-repair-johannesburg-11.jpg">
-          <img src="images/plumbing/plumbing-repair-johannesburg-11-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-11-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-11.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Vincent K Plumbers team completing a bathroom installation in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/plumbing/plumbing-repair-johannesburg-11-640.webp 640w, images/plumbing/plumbing-repair-johannesburg-11.webp 675w" />
+    <img src="images/plumbing/plumbing-repair-johannesburg-11-640.jpg" srcset="images/plumbing/plumbing-repair-johannesburg-11-640.jpg 640w, images/plumbing/plumbing-repair-johannesburg-11.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Vincent K Plumbers team completing a bathroom installation in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Vincent K Plumbers team completing a bathroom installation in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-01.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-01-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-01-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-01.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Modern bathroom renovation with freestanding bath, glass shower and double vanity in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-01-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-01.webp 850w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-01-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-01-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-01.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Modern bathroom renovation with freestanding bath, glass shower and double vanity in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Modern bathroom renovation with freestanding bath, glass shower and double vanity in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-02.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-02-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-02-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-02.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Completed family bathroom with bath, shower and toilet" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-02-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-02.webp 850w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-02-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-02-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-02.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Completed family bathroom with bath, shower and toilet" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Completed family bathroom with bath, shower and toilet</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-03.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-03-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-03-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Guest bathroom with stone basin and toilet fitted in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-03-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-03.webp 900w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-03-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-03-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Guest bathroom with stone basin and toilet fitted in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Guest bathroom with stone basin and toilet fitted in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-04.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-04-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-04-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-04.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Spa bath and stone feature wall in a Johannesburg bathroom renovation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-04-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-04.webp 850w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-04-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-04-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-04.jpg 850w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="850" height="560" alt="Spa bath and stone feature wall in a Johannesburg bathroom renovation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Spa bath and stone feature wall in a Johannesburg bathroom renovation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-05.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-05-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-05-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Team fitting a tiled shower after plumbing installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-05-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-05.webp 900w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-05-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-05-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Team fitting a tiled shower after plumbing installation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Team fitting a tiled shower after plumbing installation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-06.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-06-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-06-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber mounting a vanity basin and mixer tap" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-06-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-06.webp 900w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-06-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-06-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-06.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Plumber mounting a vanity basin and mixer tap" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Plumber mounting a vanity basin and mixer tap</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-07.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-07-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-07-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Drilling and fitting a shower mixer in a tiled bathroom" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-07-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-07.webp 900w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-07-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-07-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-07.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Drilling and fitting a shower mixer in a tiled bathroom" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Drilling and fitting a shower mixer in a tiled bathroom</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/bathrooms/bathroom-renovation-johannesburg-08.jpg">
-          <img src="images/bathrooms/bathroom-renovation-johannesburg-08-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-08-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Wall-mounted stone basin and mixer tap installed in a Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/bathrooms/bathroom-renovation-johannesburg-08-640.webp 640w, images/bathrooms/bathroom-renovation-johannesburg-08.webp 900w" />
+    <img src="images/bathrooms/bathroom-renovation-johannesburg-08-640.jpg" srcset="images/bathrooms/bathroom-renovation-johannesburg-08-640.jpg 640w, images/bathrooms/bathroom-renovation-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Wall-mounted stone basin and mixer tap installed in a Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Wall-mounted stone basin and mixer tap installed in a Midrand home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/geysers/geyser-replacement-johannesburg-01.jpg">
-          <img src="images/geysers/geyser-replacement-johannesburg-01-640.jpg" srcset="images/geysers/geyser-replacement-johannesburg-01-640.jpg 640w, images/geysers/geyser-replacement-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New electric geyser installed in the roof with insulation blanket, drip tray and safety valves" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/geysers/geyser-replacement-johannesburg-01-640.webp 640w, images/geysers/geyser-replacement-johannesburg-01.webp 900w" />
+    <img src="images/geysers/geyser-replacement-johannesburg-01-640.jpg" srcset="images/geysers/geyser-replacement-johannesburg-01-640.jpg 640w, images/geysers/geyser-replacement-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="New electric geyser installed in the roof with insulation blanket, drip tray and safety valves" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
@@ -769,217 +914,310 @@
         </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-01.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-01-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-01-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool surround paving in charcoal and grey pavers finished at sunset" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-01-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-01.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-01-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-01-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool surround paving in charcoal and grey pavers finished at sunset" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool surround paving in charcoal and grey pavers finished at sunset</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-02.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-02-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-02-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Grey block paving driveway and patio on a modern Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-02-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-02.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-02-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-02-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Grey block paving driveway and patio on a modern Midrand home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Grey block paving driveway and patio on a modern Midrand home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-03.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-03-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-03-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-03.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Pool deck paved in grey blocks with a landscaped garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-03-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-03.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-03-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-03-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-03.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Pool deck paved in grey blocks with a landscaped garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool deck paved in grey blocks with a landscaped garden</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-04.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-04-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-04-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Light grey pool deck paving completed in Johannesburg" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-04-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-04.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-04-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-04-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-04.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Light grey pool deck paving completed in Johannesburg" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Light grey pool deck paving completed in Johannesburg</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-05.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-05-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-05-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-05.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Swimming pool surrounded by charcoal paving and a lush garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-05-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-05.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-05-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-05-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-05.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Swimming pool surrounded by charcoal paving and a lush garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Swimming pool surrounded by charcoal paving and a lush garden</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-06.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-06-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-06-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-06.jpg 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="960" height="720" alt="Swimming pool surrounded by clay brick paving" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-06-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-06.webp 960w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-06-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-06-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-06.jpg 960w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="960" height="720" alt="Swimming pool surrounded by clay brick paving" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Swimming pool surrounded by clay brick paving</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-07.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-07-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-07-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-07.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Grey pavers around a pool with tropical planting" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-07-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-07.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-07-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-07-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-07.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="800" alt="Grey pavers around a pool with tropical planting" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Grey pavers around a pool with tropical planting</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-08.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-08-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-08-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved driveway paving leading down to a pool" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-08-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-08.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-08-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-08-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-08.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved driveway paving leading down to a pool" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Curved driveway paving leading down to a pool</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-09.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-09-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-09-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-09.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Light grey pavers installed around a swimming pool" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-09-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-09.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-09-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-09-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-09.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Light grey pavers installed around a swimming pool" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Light grey pavers installed around a swimming pool</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-10.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-10-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-10-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool deck paving finished beside the house" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-10-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-10.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-10-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-10-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-10.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool deck paving finished beside the house" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool deck paving finished beside the house</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-11.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-11-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-11-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-11.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Pool and paving completed in a Midrand garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-11-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-11.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-11-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-11-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-11.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Pool and paving completed in a Midrand garden" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool and paving completed in a Midrand garden</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-12.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-12-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-12-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-12.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved pool paving with a neat lawn edge" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-12-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-12.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-12-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-12-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-12.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved pool paving with a neat lawn edge" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Curved pool paving with a neat lawn edge</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-13.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-13-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-13-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-13.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paved walkway from the driveway to the front entrance" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-13-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-13.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-13-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-13-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-13.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paved walkway from the driveway to the front entrance" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paved walkway from the driveway to the front entrance</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-14.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-14-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-14-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-14.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="1200" alt="Driveway paved with charcoal interlocking blocks" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-14-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-14.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-14-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-14-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-14.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="1200" alt="Driveway paved with charcoal interlocking blocks" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Driveway paved with charcoal interlocking blocks</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-15.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-15-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-15-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-15.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Clay brick paving at a home entrance in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-15-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-15.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-15-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-15-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-15.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Clay brick paving at a home entrance in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Clay brick paving at a home entrance in Midrand</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-16.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-16-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-16-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-16.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="1200" alt="Driveway paving with brick edging beside a face-brick house" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-16-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-16.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-16-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-16-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-16.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="1200" alt="Driveway paving with brick edging beside a face-brick house" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Driveway paving with brick edging beside a face-brick house</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-17.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-17-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-17-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-17.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Double-storey home with a new grey block paving driveway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-17-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-17.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-17-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-17-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-17.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Double-storey home with a new grey block paving driveway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Double-storey home with a new grey block paving driveway</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-18.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-18-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-18-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-18.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paving team installing a garden walkway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-18-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-18.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-18-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-18-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-18.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paving team installing a garden walkway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paving team installing a garden walkway</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-19.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-19-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-19-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-19.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Two-man paving team laying a new driveway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-19-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-19.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-19-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-19-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-19.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Two-man paving team laying a new driveway" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Two-man paving team laying a new driveway</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-20.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-20-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-20-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-20.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paving crew laying blocks across a large driveway area" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-20-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-20.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-20-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-20-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-20.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Paving crew laying blocks across a large driveway area" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paving crew laying blocks across a large driveway area</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-21.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-21-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-21-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-21.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Laying pavers on a prepared sand bed" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-21-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-21.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-21-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-21-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-21.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Laying pavers on a prepared sand bed" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Laying pavers on a prepared sand bed</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-22.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-22-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-22-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-22.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="540" alt="Paving team laying interlocking pavers at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-22-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-22.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-22-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-22-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-22.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="540" alt="Paving team laying interlocking pavers at a Johannesburg home" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paving team laying interlocking pavers at a Johannesburg home</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-23.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-23-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-23-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-23.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="540" alt="Paving installation in progress with timber edging and tools" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-23-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-23.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-23-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-23-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-23.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="540" alt="Paving installation in progress with timber edging and tools" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paving installation in progress with timber edging and tools</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-24.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-24-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-24-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-24.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved paving edge finished with concrete kerbing" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-24-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-24.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-24-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-24-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-24.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Curved paving edge finished with concrete kerbing" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Curved paving edge finished with concrete kerbing</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-25.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-25-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-25-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-25.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Channel drain and edging installed beside a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-25-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-25.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-25-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-25-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-25.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Channel drain and edging installed beside a boundary wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Channel drain and edging installed beside a boundary wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-26.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-26-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-26-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-26.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool area drainage and paving preparation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-26-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-26.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-26-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-26-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-26.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool area drainage and paving preparation" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool area drainage and paving preparation</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-27.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-27-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-27-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-27.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Finished paving and garden edging work" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-27-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-27.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-27-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-27-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-27.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Finished paving and garden edging work" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Finished paving and garden edging work</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-28.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-28-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-28-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-28.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Laying paving bricks on a new patio" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-28-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-28.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-28-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-28-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-28.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Laying paving bricks on a new patio" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Laying paving bricks on a new patio</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-29.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-29-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-29-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-29.jpg 1080w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1080" height="822" alt="Paving brick colour options presented to a client" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-29-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-29.webp 1080w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-29-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-29-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-29.jpg 1080w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1080" height="822" alt="Paving brick colour options presented to a client" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Paving brick colour options presented to a client</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-30.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-30-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-30-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-30.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool paving installation in progress" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-30-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-30.webp 900w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-30-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-30-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-30.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Pool paving installation in progress" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Pool paving installation in progress</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/paving/paving-and-brick-laying-johannesburg-31.jpg">
-          <img src="images/paving/paving-and-brick-laying-johannesburg-31-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-31-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-31.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Paving materials delivered to site by the Vincent K Plumbers team" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/paving/paving-and-brick-laying-johannesburg-31-640.webp 640w, images/paving/paving-and-brick-laying-johannesburg-31.webp 1200w" />
+    <img src="images/paving/paving-and-brick-laying-johannesburg-31-640.jpg" srcset="images/paving/paving-and-brick-laying-johannesburg-31-640.jpg 640w, images/paving/paving-and-brick-laying-johannesburg-31.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Paving materials delivered to site by the Vincent K Plumbers team" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
@@ -1001,35 +1239,50 @@
         </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/irrigation/irrigation-system-installation-johannesburg-01.jpg">
-          <img src="images/irrigation/irrigation-system-installation-johannesburg-01-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-01-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Irrigation installation on a Midrand lawn with sprinkler positions marked out" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/irrigation/irrigation-system-installation-johannesburg-01-640.webp 640w, images/irrigation/irrigation-system-installation-johannesburg-01.webp 900w" />
+    <img src="images/irrigation/irrigation-system-installation-johannesburg-01-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-01-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-01.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Irrigation installation on a Midrand lawn with sprinkler positions marked out" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Irrigation installation on a Midrand lawn with sprinkler positions marked out</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/irrigation/irrigation-system-installation-johannesburg-02.jpg">
-          <img src="images/irrigation/irrigation-system-installation-johannesburg-02-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-02-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Irrigation system being installed on a lawn in Johannesburg" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/irrigation/irrigation-system-installation-johannesburg-02-640.webp 640w, images/irrigation/irrigation-system-installation-johannesburg-02.webp 900w" />
+    <img src="images/irrigation/irrigation-system-installation-johannesburg-02-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-02-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-02.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="1200" alt="Irrigation system being installed on a lawn in Johannesburg" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Irrigation system being installed on a lawn in Johannesburg</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/irrigation/irrigation-system-installation-johannesburg-03.jpg">
-          <img src="images/irrigation/irrigation-system-installation-johannesburg-03-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-03-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="506" alt="Technician connecting irrigation pipework along a garden wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/irrigation/irrigation-system-installation-johannesburg-03-640.webp 640w, images/irrigation/irrigation-system-installation-johannesburg-03.webp 900w" />
+    <img src="images/irrigation/irrigation-system-installation-johannesburg-03-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-03-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-03.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="506" alt="Technician connecting irrigation pipework along a garden wall" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Technician connecting irrigation pipework along a garden wall</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/irrigation/irrigation-system-installation-johannesburg-04.jpg">
-          <img src="images/irrigation/irrigation-system-installation-johannesburg-04-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-04-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-04.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Sprinkler and drip line being fitted in a garden flower bed" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/irrigation/irrigation-system-installation-johannesburg-04-640.webp 640w, images/irrigation/irrigation-system-installation-johannesburg-04.webp 675w" />
+    <img src="images/irrigation/irrigation-system-installation-johannesburg-04-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-04-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-04.jpg 675w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="675" height="1200" alt="Sprinkler and drip line being fitted in a garden flower bed" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
           <figcaption class="gallery-caption">Sprinkler and drip line being fitted in a garden flower bed</figcaption>
         </figure>
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/irrigation/irrigation-system-installation-johannesburg-05.jpg">
-          <img src="images/irrigation/irrigation-system-installation-johannesburg-05-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-05-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="506" alt="Lawn and garden wall after a completed irrigation installation in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/irrigation/irrigation-system-installation-johannesburg-05-640.webp 640w, images/irrigation/irrigation-system-installation-johannesburg-05.webp 900w" />
+    <img src="images/irrigation/irrigation-system-installation-johannesburg-05-640.jpg" srcset="images/irrigation/irrigation-system-installation-johannesburg-05-640.jpg 640w, images/irrigation/irrigation-system-installation-johannesburg-05.jpg 900w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="900" height="506" alt="Lawn and garden wall after a completed irrigation installation in Midrand" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
@@ -1051,7 +1304,10 @@
         </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
         <figure class="gallery-item reveal aspect-[4/3]" data-full="images/team/vincent-k-plumbers-team-johannesburg-01.jpg">
-          <img src="images/team/vincent-k-plumbers-team-johannesburg-01-640.jpg" srcset="images/team/vincent-k-plumbers-team-johannesburg-01-640.jpg 640w, images/team/vincent-k-plumbers-team-johannesburg-01.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Vincent K Plumbers team arriving on site in Midrand with the company work truck" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+          <picture>
+    <source type="image/webp" srcset="images/team/vincent-k-plumbers-team-johannesburg-01-640.webp 640w, images/team/vincent-k-plumbers-team-johannesburg-01.webp 1200w" />
+    <img src="images/team/vincent-k-plumbers-team-johannesburg-01-640.jpg" srcset="images/team/vincent-k-plumbers-team-johannesburg-01-640.jpg 640w, images/team/vincent-k-plumbers-team-johannesburg-01.jpg 1200w" sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" width="1200" height="900" alt="Vincent K Plumbers team arriving on site in Midrand with the company work truck" loading="lazy" decoding="async" class="w-full h-full object-cover"  />
+    </picture>
           <span class="gallery-zoom-hint" aria-hidden="true">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M11 18a7 7 0 100-14 7 7 0 000 14zM11 8v6M8 11h6"/></svg>
           </span>
@@ -1181,7 +1437,10 @@
         <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           <a href="images/brand/logo.jpg" download class="reveal group rounded-2xl border border-slate-200 overflow-hidden bg-white hover:border-sky-400 hover:shadow-lg transition-all">
             <div class="p-4 flex items-center justify-center bg-white h-52">
-              <img src="images/brand/logo.jpg" alt="Vincent Plumbing and Construction Services company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+              <picture>
+    <source type="image/webp" src="images/brand/logo.webp" />
+    <img src="images/brand/logo.jpg" alt="Vincent Plumbing and Construction Services company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+    </picture>
             </div>
             <div class="px-4 py-3 flex items-center justify-between gap-2">
               <span><span class="block text-xs font-bold text-slate-900">Official company logo</span><span class="block text-[11px] text-slate-500">JPG · Original artwork</span></span>
@@ -1190,7 +1449,10 @@
           </a>
           <a href="images/brand/IMG-20261109-WA0003.jpg" download class="reveal group rounded-2xl border border-slate-200 overflow-hidden bg-white hover:border-sky-400 hover:shadow-lg transition-all">
             <div class="p-4 flex items-center justify-center bg-slate-100 h-52">
-              <img src="images/brand/IMG-20261109-WA0003.jpg" alt="Navy branded Vincent Plumbers cap with embroidered company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+              <picture>
+    <source type="image/webp" src="images/brand/IMG-20261109-WA0003.webp" />
+    <img src="images/brand/IMG-20261109-WA0003.jpg" alt="Navy branded Vincent Plumbers cap with embroidered company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+    </picture>
             </div>
             <div class="px-4 py-3 flex items-center justify-between gap-2">
               <span><span class="block text-xs font-bold text-slate-900">Branded team cap</span><span class="block text-[11px] text-slate-500">JPG · Workwear</span></span>
@@ -1199,7 +1461,10 @@
           </a>
           <a href="images/brand/IMG-20261109-WA0002.jpg" download class="reveal group rounded-2xl border border-slate-200 overflow-hidden bg-white hover:border-sky-400 hover:shadow-lg transition-all">
             <div class="p-4 flex items-center justify-center bg-slate-100 h-52">
-              <img src="images/brand/IMG-20261109-WA0002.jpg" alt="Folded red Vincent Plumbers branded work shirt showing company name and contact details" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+              <picture>
+    <source type="image/webp" src="images/brand/IMG-20261109-WA0002.webp" />
+    <img src="images/brand/IMG-20261109-WA0002.jpg" alt="Folded red Vincent Plumbers branded work shirt showing company name and contact details" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+    </picture>
             </div>
             <div class="px-4 py-3 flex items-center justify-between gap-2">
               <span><span class="block text-xs font-bold text-slate-900">Branded work shirt</span><span class="block text-[11px] text-slate-500">JPG · Workwear</span></span>
@@ -1208,7 +1473,10 @@
           </a>
           <a href="images/brand/IMG-20261109-WA0004.jpg" download class="reveal group rounded-2xl border border-slate-200 overflow-hidden bg-white hover:border-sky-400 hover:shadow-lg transition-all">
             <div class="p-4 flex items-center justify-center bg-slate-100 h-52">
-              <img src="images/brand/IMG-20261109-WA0004.jpg" alt="Red branded Vincent Plumbers polo shirt with embroidered company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+              <picture>
+    <source type="image/webp" src="images/brand/IMG-20261109-WA0004.webp" />
+    <img src="images/brand/IMG-20261109-WA0004.jpg" alt="Red branded Vincent Plumbers polo shirt with embroidered company logo" class="w-full h-full object-contain" loading="lazy" decoding="async" />
+    </picture>
             </div>
             <div class="px-4 py-3 flex items-center justify-between gap-2">
               <span><span class="block text-xs font-bold text-slate-900">Branded polo shirt</span><span class="block text-[11px] text-slate-500">JPG · Workwear</span></span>
@@ -1243,7 +1511,10 @@
 
         <div class="lg:col-span-4 space-y-4">
           <a href="/" class="inline-block" aria-label="Vincent K Plumbers home">
-            <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-28 h-28 rounded-2xl bg-white object-contain p-2 shadow-sm" loading="lazy" decoding="async" />
+            <picture>
+    <source type="image/webp" src="images/brand/logo.webp" />
+    <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-28 h-28 rounded-2xl bg-white object-contain p-2 shadow-sm" loading="lazy" decoding="async" />
+    </picture>
           </a>
 
           <p class="text-sm text-slate-400 leading-relaxed">
@@ -1274,7 +1545,7 @@
         <div class="lg:col-span-3 space-y-4">
           <h3 class="font-display font-bold text-white text-base">Our Services</h3>
           <ul class="space-y-2.5 text-sm text-slate-400">
-            <li><a href="gas-geyser-installation-johannesburg.html" class="hover:text-sky-400 transition">Gas Geyser Installation</a></li><li><a href="geyser-replacement-johannesburg.html" class="hover:text-sky-400 transition">Geyser Replacement & Repair</a></li><li><a href="plumbing-johannesburg.html" class="hover:text-sky-400 transition">General Plumbing & Repairs</a></li><li><a href="leak-detection-johannesburg.html" class="hover:text-sky-400 transition">Leak Detection</a></li><li><a href="paving-johannesburg.html" class="hover:text-sky-400 transition">Paving & Brick Laying</a></li><li><a href="irrigation-johannesburg.html" class="hover:text-sky-400 transition">Irrigation Systems</a></li><li><a href="water-purification-johannesburg.html" class="hover:text-sky-400 transition">Water Purification</a></li>
+            <li><a href="blocked-drains-johannesburg.html" class="hover:text-sky-400 transition">Blocked Drains</a></li><li><a href="leak-detection-johannesburg.html" class="hover:text-sky-400 transition">Leak Detection</a></li><li><a href="geyser-repair-johannesburg.html" class="hover:text-sky-400 transition">Geyser Repair</a></li><li><a href="geyser-replacement-johannesburg.html" class="hover:text-sky-400 transition">Geyser Replacement</a></li><li><a href="gas-geyser-installation-johannesburg.html" class="hover:text-sky-400 transition">Gas Geyser Installation</a></li><li><a href="solar-geyser-installation-gauteng.html" class="hover:text-sky-400 transition">Solar Geyser Installation</a></li><li><a href="burst-pipe-repair-johannesburg.html" class="hover:text-sky-400 transition">Burst Pipe Repair</a></li><li><a href="bathroom-renovations-johannesburg.html" class="hover:text-sky-400 transition">Bathroom Renovations</a></li><li><a href="waterproofing-johannesburg.html" class="hover:text-sky-400 transition">Waterproofing</a></li><li><a href="plumbing-johannesburg.html" class="hover:text-sky-400 transition">General Plumbing & Repairs</a></li><li><a href="paving-johannesburg.html" class="hover:text-sky-400 transition">Paving & Brick Laying</a></li><li><a href="irrigation-johannesburg.html" class="hover:text-sky-400 transition">Irrigation Systems</a></li><li><a href="water-purification-johannesburg.html" class="hover:text-sky-400 transition">Water Purification</a></li>
           </ul>
         </div>
 
@@ -1336,6 +1607,7 @@
     </div>
   </div>
 
-  <script src="assets/js/site.js" defer></script>
+  
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>

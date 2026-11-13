@@ -1,0 +1,14 @@
+{
+  "name": "vincent-k-plumbers",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Static marketing website for Vincent K Plumbers, Johannesburg.",
+  "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/tailwind-input.css -o ./assets/css/tailwind.css --minify",
+    "build:images": "python3 tools/build_images.py",
+    "build": "npm run build:css && npm run build:images"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4"
+  }
+}
