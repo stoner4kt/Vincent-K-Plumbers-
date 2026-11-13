@@ -190,3 +190,22 @@ body.lightbox-open { overflow: hidden; }
 
 /* Keep anchor targets clear of the sticky header */
 section[id], div[id="quote-form"] { scroll-margin-top: 5.5rem; }
+
+/* Prose default for guide articles */
+.prose-custom {
+  font-size: 1rem;
+  line-height: 1.75;
+}
+.prose-custom p { margin-bottom: 1em; }
+.prose-custom h2 { margin-top: 1.5em; }
+.prose-custom h3 { margin-top: 1.25em; }
+.prose-custom ul { margin-bottom: 1em; }
+.prose-custom strong { color: #0f172a; }
+
+/* Visible focus states for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #0284C7;
+  outline-offset: 2px;
+}

@@ -48,16 +48,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/site.css" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="assets/css/tailwind.css" />
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true, 'send_page_view': true });
-    function trackConversion(eventName, details) {
-      if (typeof gtag === 'function') {
+    var VKP_GA4_ID = '[GA4-MEASUREMENT-ID]';
+    if (VKP_GA4_ID.indexOf('[GA4') !== 0) {
+      (function (w, d, s) {
+        var g = d.createElement(s); g.async = true;
+        g.src = 'https://www.googletagmanager.com/gtag/js?id=' + VKP_GA4_ID;
+        var f = d.getElementsByTagName(s)[0]; f.parentNode.insertBefore(g, f);
+      })(window, document, 'script');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
+      function trackConversion(eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
@@ -263,6 +269,7 @@
   </script>
 </head>
 <body class="antialiased selection:bg-sky-600 selection:text-white">
+<body class="antialiased selection:bg-sky-600 selection:text-white">
 
   <div class="bg-[#07111C] text-slate-300 text-xs border-b border-white/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex flex-wrap items-center justify-between gap-2">
@@ -299,7 +306,10 @@
   <header class="sticky top-0 z-40 glass-nav border-b border-slate-200/80 shadow-xs">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 flex items-center justify-between gap-4">
       <a href="/" class="flex items-center gap-3 group shrink-0" aria-label="Vincent K Plumbers home">
-        <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-12 h-12 shrink-0 rounded-xl bg-white object-contain p-0.5 ring-1 ring-slate-200 group-hover:scale-105 transition-transform" />
+        <picture>
+    <source type="image/webp" src="images/brand/logo.webp" />
+    <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-12 h-12 shrink-0 rounded-xl bg-white object-contain p-0.5 ring-1 ring-slate-200 group-hover:scale-105 transition-transform" />
+    </picture>
         <span class="hidden sm:block">
           <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-slate-900 block leading-none">Vincent K <span class="text-sky-600">Plumbers</span></span>
           <span class="text-[11px] font-medium text-slate-500 tracking-wide uppercase">Midrand &amp; Johannesburg</span>
@@ -312,24 +322,30 @@
             Services
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
           </button>
-          <div class="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[34rem]">
-            <ul class="bg-white rounded-2xl border border-slate-200 shadow-2xl p-2 grid grid-cols-1 gap-0.5">
-            <li><a href="gas-geyser-installation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Gas Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Gas Geysers in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="geyser-replacement-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Replacement & Repair</span><span class="block text-xs text-slate-500 mt-0.5">Geyser Replacement in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="plumbing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L3 3l3 1.5v1.409l4.26 4.26m-1.745 1.437L9 12.75l1.5 1.5m-3.164-1.421l-.001.001"/></svg></span><span><span class="block text-sm font-bold text-slate-900">General Plumbing & Repairs</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="leak-detection-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Leak Detection</span><span class="block text-xs text-slate-500 mt-0.5">Leak Detection in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="paving-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Paving & Brick Laying</span><span class="block text-xs text-slate-500 mt-0.5">Paving in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="irrigation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-6m0 0a3 3 0 00-3-3H4m8 3a3 3 0 013-3h5M9 3l1.5 3M15 3l-1.5 3M12 2v4"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Irrigation Systems</span><span class="block text-xs text-slate-500 mt-0.5">Irrigation in Midrand &amp; Johannesburg</span></span></a></li>
-            <li><a href="water-purification-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.342.436 7.5 1.2v6.3c0 4.5-3.2 8.4-7.5 10.5-4.3-2.1-7.5-6-7.5-10.5V4.2C6.658 3.436 9.245 3 12 3z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Water Purification</span><span class="block text-xs text-slate-500 mt-0.5">Water Purification in Midrand &amp; Johannesburg</span></span></a></li>
+          <div class="nav-dropdown absolute left-1/2 -translate-x-1/2 top-full pt-3 w-[38rem]">
+            <ul class="bg-white rounded-2xl border border-slate-200 shadow-2xl p-2 grid grid-cols-2 gap-0.5">
+            <li><a href="blocked-drains-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25A6.75 6.75 0 0012 15.75a6.75 6.75 0 000-13.5zM12 15.75v6M8.25 21.75h7.5"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Blocked Drains</span><span class="block text-xs text-slate-500 mt-0.5">Drain clearing in Johannesburg</span></span></a></li>
+            <li><a href="leak-detection-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Leak Detection</span><span class="block text-xs text-slate-500 mt-0.5">Find hidden leaks fast</span></span></a></li>
+            <li><a href="geyser-repair-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Repair</span><span class="block text-xs text-slate-500 mt-0.5">Electric &amp; gas geysers</span></span></a></li>
+            <li><a href="geyser-replacement-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c0 0-6 6.9-6 11a6 6 0 0012 0c0-4.1-6-11-6-11z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Geyser Replacement</span><span class="block text-xs text-slate-500 mt-0.5">With drip trays &amp; valves</span></span></a></li>
+            <li><a href="gas-geyser-installation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Gas Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Load-shedding-proof gas</span></span></a></li>
+            <li><a href="solar-geyser-installation-gauteng.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v3m6.366-.366l-2.12 2.12M21 12h-3m.366 6.366l-2.12-2.12M12 21v-3m-6.366.366l2.12-2.12M3 12h3m-.366-6.366l2.12 2.12"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Solar Geyser Installation</span><span class="block text-xs text-slate-500 mt-0.5">Solar &amp; retrofits</span></span></a></li>
+            <li><a href="burst-pipe-repair-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25a7.75 7.75 0 00-7.75 7.75c0 4.5 7.75 12.75 7.75 12.75S19.75 14.5 19.75 10A7.75 7.75 0 0012 2.25z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Burst Pipe Repair</span><span class="block text-xs text-slate-500 mt-0.5">Emergency pipe repairs</span></span></a></li>
+            <li><a href="bathroom-renovations-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Bathroom Renovations</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing for new bathrooms</span></span></a></li>
+            <li><a href="waterproofing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Waterproofing</span><span class="block text-xs text-slate-500 mt-0.5">Damp &amp; waterproofing</span></span></a></li>
+            <li><a href="plumbing-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L3 3l3 1.5v1.409l4.26 4.26m-1.745 1.437L9 12.75l1.5 1.5m-3.164-1.421l-.001.001"/></svg></span><span><span class="block text-sm font-bold text-slate-900">General Plumbing &amp; Repairs</span><span class="block text-xs text-slate-500 mt-0.5">Plumbing repairs &amp; installs</span></span></a></li>
+            <li><a href="paving-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l-4.179 2.25L8.25 16.5m9.321-2.25L21.75 16.5 12 21.75 2.25 16.5l4.179-2.25"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Paving &amp; Brick Laying</span><span class="block text-xs text-slate-500 mt-0.5">Driveways &amp; pool decks</span></span></a></li>
+            <li><a href="irrigation-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-6m0 0a3 3 0 00-3-3H4m8 3a3 3 0 013-3h5M9 3l1.5 3M15 3l-1.5 3M12 2v4"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Irrigation Systems</span><span class="block text-xs text-slate-500 mt-0.5">Lawn &amp; garden irrigation</span></span></a></li>
+            <li><a href="water-purification-johannesburg.html" class="flex items-start gap-3 px-4 py-3 rounded-xl hover:bg-slate-50 transition-colors group"><span class="w-9 h-9 rounded-lg bg-sky-50 text-sky-700 flex items-center justify-center shrink-0 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.342.436 7.5 1.2v6.3c0 4.5-3.2 8.4-7.5 10.5-4.3-2.1-7.5-6-7.5-10.5V4.2C6.658 3.436 9.245 3 12 3z"/></svg></span><span><span class="block text-sm font-bold text-slate-900">Water Purification</span><span class="block text-xs text-slate-500 mt-0.5">Filtered drinking water</span></span></a></li>
             </ul>
           </div>
         </div>
         <a href="gallery.html" class="hover:text-sky-600 transition-colors">Gallery</a>
-        <a href="index.html#why-us" class="hover:text-sky-600 transition-colors">Why Choose Us</a>
-        <a href="index.html#areas" class="hover:text-sky-600 transition-colors">Areas Served</a>
+        <a href="guides.html" class="hover:text-sky-600 transition-colors">Guides</a>
+        <a href="service-areas.html" class="hover:text-sky-600 transition-colors">Areas</a>
         <a href="index.html#reviews" class="hover:text-sky-600 transition-colors">Reviews</a>
-        <a href="index.html#faq" class="hover:text-sky-600 transition-colors">FAQ</a>
-        <a href="index.html#contact" class="hover:text-sky-600 transition-colors">Contact</a>
+        <a href="about.html" class="hover:text-sky-600 transition-colors">About</a>
+        <a href="contact.html" class="hover:text-sky-600 transition-colors">Contact</a>
       </nav>
 
       <div class="hidden md:flex items-center gap-3 shrink-0">
@@ -351,19 +367,26 @@
 
     <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-200 px-4 py-4 space-y-1 shadow-xl max-h-[80vh] overflow-y-auto">
       <p class="px-3 pt-1 pb-1 text-[11px] font-bold uppercase tracking-widest text-slate-400">Services</p>
-      <a href="gas-geyser-installation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Gas Geyser Installation</a>
-      <a href="geyser-replacement-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Replacement & Repair</a>
-      <a href="plumbing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">General Plumbing & Repairs</a>
+      <a href="blocked-drains-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Blocked Drains</a>
       <a href="leak-detection-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Leak Detection</a>
+      <a href="geyser-repair-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Repair</a>
+      <a href="geyser-replacement-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Geyser Replacement</a>
+      <a href="gas-geyser-installation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Gas Geyser Installation</a>
+      <a href="solar-geyser-installation-gauteng.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Solar Geyser Installation</a>
+      <a href="burst-pipe-repair-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Burst Pipe Repair</a>
+      <a href="bathroom-renovations-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Bathroom Renovations</a>
+      <a href="waterproofing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Waterproofing</a>
+      <a href="plumbing-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">General Plumbing & Repairs</a>
       <a href="paving-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Paving & Brick Laying</a>
       <a href="irrigation-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Irrigation Systems</a>
       <a href="water-purification-johannesburg.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Water Purification</a>
       <div class="h-px bg-slate-100 my-2"></div>
       <a href="gallery.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Project Gallery</a>
-      <a href="index.html#why-us" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Why Choose Us</a>
-      <a href="index.html#areas" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Areas Served</a>
-      <a href="index.html#faq" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">FAQ</a>
-      <a href="index.html#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Contact &amp; Map</a>
+      <a href="guides.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Guides &amp; Tips</a>
+      <a href="service-areas.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Areas Served</a>
+      <a href="index.html#reviews" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Reviews</a>
+      <a href="about.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">About Us</a>
+      <a href="contact.html" class="mobile-nav-link block px-3 py-2.5 rounded-lg font-semibold text-slate-800 hover:bg-sky-50 hover:text-sky-700">Contact &amp; Map</a>
       <div class="pt-2 border-t border-slate-100 flex gap-2">
         <a href="tel:+27681343276" onclick="trackConversion('phone_click', {location: 'mobile_menu'})" class="flex-1 text-center py-2.5 rounded-xl bg-slate-900 text-white font-bold text-sm">Call 068 134 3276</a>
         <a href="index.html#quote-form" class="mobile-nav-link flex-1 text-center py-2.5 rounded-xl bg-orange-600 text-white font-bold text-sm">Get Quote</a>
@@ -371,7 +394,9 @@
     </div>
   </header>
 
+  
   <main id="top">
+
 
     <section class="relative hero-bg text-white overflow-hidden">
       <div class="absolute inset-0 blueprint-grid pointer-events-none"></div>
@@ -426,7 +451,10 @@
 
         <div class="lg:col-span-4 space-y-4">
           <a href="/" class="inline-block" aria-label="Vincent K Plumbers home">
-            <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-28 h-28 rounded-2xl bg-white object-contain p-2 shadow-sm" loading="lazy" decoding="async" />
+            <picture>
+    <source type="image/webp" src="images/brand/logo.webp" />
+    <img src="images/brand/logo.jpg" width="640" height="640" alt="Vincent Plumbing &amp; Construction Services company logo" class="w-28 h-28 rounded-2xl bg-white object-contain p-2 shadow-sm" loading="lazy" decoding="async" />
+    </picture>
           </a>
 
           <p class="text-sm text-slate-400 leading-relaxed">
@@ -457,7 +485,7 @@
         <div class="lg:col-span-3 space-y-4">
           <h3 class="font-display font-bold text-white text-base">Our Services</h3>
           <ul class="space-y-2.5 text-sm text-slate-400">
-            <li><a href="gas-geyser-installation-johannesburg.html" class="hover:text-sky-400 transition">Gas Geyser Installation</a></li><li><a href="geyser-replacement-johannesburg.html" class="hover:text-sky-400 transition">Geyser Replacement & Repair</a></li><li><a href="plumbing-johannesburg.html" class="hover:text-sky-400 transition">General Plumbing & Repairs</a></li><li><a href="leak-detection-johannesburg.html" class="hover:text-sky-400 transition">Leak Detection</a></li><li><a href="paving-johannesburg.html" class="hover:text-sky-400 transition">Paving & Brick Laying</a></li><li><a href="irrigation-johannesburg.html" class="hover:text-sky-400 transition">Irrigation Systems</a></li><li><a href="water-purification-johannesburg.html" class="hover:text-sky-400 transition">Water Purification</a></li>
+            <li><a href="blocked-drains-johannesburg.html" class="hover:text-sky-400 transition">Blocked Drains</a></li><li><a href="leak-detection-johannesburg.html" class="hover:text-sky-400 transition">Leak Detection</a></li><li><a href="geyser-repair-johannesburg.html" class="hover:text-sky-400 transition">Geyser Repair</a></li><li><a href="geyser-replacement-johannesburg.html" class="hover:text-sky-400 transition">Geyser Replacement</a></li><li><a href="gas-geyser-installation-johannesburg.html" class="hover:text-sky-400 transition">Gas Geyser Installation</a></li><li><a href="solar-geyser-installation-gauteng.html" class="hover:text-sky-400 transition">Solar Geyser Installation</a></li><li><a href="burst-pipe-repair-johannesburg.html" class="hover:text-sky-400 transition">Burst Pipe Repair</a></li><li><a href="bathroom-renovations-johannesburg.html" class="hover:text-sky-400 transition">Bathroom Renovations</a></li><li><a href="waterproofing-johannesburg.html" class="hover:text-sky-400 transition">Waterproofing</a></li><li><a href="plumbing-johannesburg.html" class="hover:text-sky-400 transition">General Plumbing & Repairs</a></li><li><a href="paving-johannesburg.html" class="hover:text-sky-400 transition">Paving & Brick Laying</a></li><li><a href="irrigation-johannesburg.html" class="hover:text-sky-400 transition">Irrigation Systems</a></li><li><a href="water-purification-johannesburg.html" class="hover:text-sky-400 transition">Water Purification</a></li>
           </ul>
         </div>
 
@@ -519,6 +547,7 @@
     </div>
   </div>
 
-  <script src="assets/js/site.js" defer></script>
+  
+<script src="assets/js/site.js" defer></script>
 </body>
 </html>
