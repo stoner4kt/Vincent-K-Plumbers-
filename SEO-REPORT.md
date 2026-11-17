@@ -195,4 +195,4 @@ Repo: `github.com/stoner4kt/Vincent-K-Plumbers-`
 ### Validation status
 
 - Source-level changes and committed static HTML were reviewed.
-- A repeatable GitHub Actions workflow (`.github/workflows/site-qa.yml`) and stdlib QA runner (`tools/qa_site.py`) have been added to run the Python/Tailwind build and check relative links, JSON-LD, sitemap parity, internal reachability, review safeguards and the GA4 placeholder on pull requests. The workflow result is pending; do not treat the build as verified until the PR check completes successfully.
+- A repeatable GitHub Actions workflow (`.github/workflows/site-qa.yml`) and stdlib QA runner (`tools/qa_site.py`) run the Python/Tailwind build and check relative links, JSON-LD, sitemap parity, internal reachability, review safeguards and the GA4 placeholder on pull requests. The latest PR run passed: Python compilation, shared partial application, full generated-page/CSS/image/sitemap build, 25 HTML pages checked, 100 JSON-LD blocks parsed, 25 sitemap URLs matched, and 0 broken links or QA errors.
