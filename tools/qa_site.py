@@ -95,7 +95,7 @@ for page in sorted(indexable):
     # Check the actual href text across other indexable pages. This is independent
     # of whether a link is root-relative, page-relative, or nested under guides/.
     filename_pattern = re.compile(
-        r'href=["\\'][^"\\']*' + re.escape(page.name) + r'(?:[?#][^"\\']*)?["\\']',
+        r"""href=["'][^"']*""" + re.escape(page.name) + r"""(?:[?#][^"']*)?["']""",
         re.I
     )
     if not any(filename_pattern.search(source)
