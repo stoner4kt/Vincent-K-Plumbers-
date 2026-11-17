@@ -33,12 +33,15 @@ GS_SCRIPT = """  <link rel="stylesheet" href="assets/css/tailwind.css" />
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
-      function trackConversion(eventName, details) {
+      window.trackConversion = function (eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
         }, details || {}));
-      }
+      };
+    } else {
+      // Keep inline conversion hooks safe until the owner adds the real GA4 ID.
+      window.trackConversion = function () {};
     }
   </script>"""
 
@@ -48,8 +51,27 @@ def json_ld(obj):
 
 
 def area_served(extra=None):
-    base = ["Johannesburg", "Midrand", "Sandton", "Centurion", "Klipfontein View", "Waterfall City",
-            "Halfway House", "Vorna Valley", "Noordwyk", "Kyalami", "Carlswald", "Fourways", "Randburg"]
+    base = [
+        "Johannesburg", "Midrand", "Sandton", "Centurion",
+        "City of Johannesburg Region A", "City of Johannesburg Region B",
+        "City of Johannesburg Region C", "City of Johannesburg Region D",
+        "City of Johannesburg Region E", "City of Johannesburg Region F",
+        "City of Johannesburg Region G",
+        "Klipfontein View", "Waterfall City", "Halfway House", "Vorna Valley",
+        "Noordwyk", "Kyalami", "Carlswald", "Glen Austin", "President Park",
+        "Rabie Ridge", "Ivory Park", "Diepsloot", "Fourways", "Sunninghill",
+        "Lonehill", "Woodmead", "Buccleuch", "Bryanston", "Douglasdale",
+        "Randburg", "Northcliff", "Rosebank", "Parkwood", "Norwood", "Killarney",
+        "Alexandra", "Wynberg", "Morningside", "Highlands North", "Roodepoort",
+        "Florida", "Bram Fischerville", "Soweto", "Doornkop", "Diepkloof",
+        "Meadowlands", "Dube", "Orlando East", "Orlando West", "Johannesburg CBD",
+        "Newtown", "Fordsburg", "Mayfair", "Berea", "Hillbrow", "Glenvista",
+        "Mulbarton", "Bassonia", "Southgate", "Ormonde", "City Deep", "Kensington",
+        "Benrose", "Ennerdale", "Orange Farm", "Lenasia", "Eldorado Park",
+        "Protea", "Lawley", "Finetown", "Zakariyya Park", "Vlakfontein",
+        "Nancefield", "Stretford", "Tembisa", "Allandale", "Edenvale",
+        "Bedfordview", "Kempton Park", "Germiston", "Alberton", "Olievenhoutbosch"
+    ]
     if extra:
         base = base + [x for x in extra if x not in base]
     return [{"@type": "City", "name": n} if n in ("Johannesburg", "Midrand", "Sandton", "Centurion")
