@@ -177,3 +177,22 @@ Repo: `github.com/stoner4kt/Vincent-K-Plumbers-`
 - All pages reachable from the homepage; every core service page is linked from header,
   footer, homepage grid and service pages (≈25 inbound links each).
 - Only intentionally-unlinked page: `404.html` (error page, `noindex`).
+
+---
+
+## 7. Johannesburg coverage, AEO/GEO and tracking follow-up (2026-11-17)
+
+- Service coverage is now described across all seven City of Johannesburg administrative regions (A–G), with representative localities and nearby Gauteng areas. The locality list is explicitly illustrative rather than a claim that only the named suburbs are served.
+- The service-area page now explains Johannesburg-wide coverage and retains the verified Klipfontein View, Midrand business base and contact details.
+- The `areaServed` data in the shared LocalBusiness schema and committed HTML pages has been expanded to reflect the seven regions and surrounding localities.
+- The GA4 Measurement ID remains `[GA4-MEASUREMENT-ID]` for the owner to replace at the final stage. Conversion hooks now safely no-op while the ID is a placeholder, then dispatch the existing event names to GA4 when configured.
+- The Reviews page remains in a Coming Soon state. No testimonials, ratings, `Review` schema or `aggregateRating` have been added because the client has not yet supplied verifiable review content.
+- Existing verified Facebook and Google Business Profile URLs remain the only `sameAs` profile links.
+- Two indirect service FAQ answers were rewritten to lead with useful answers; their visible copy and matching FAQ structured data are updated together.
+- The sitemap generator now excludes `404.html` and any page marked `noindex`; the committed sitemap contains 25 indexable URLs and no 404 entry.
+- No suburb doorway pages or invented regional landing pages were created. The repository did not contain the six region landing pages referenced in the task brief; the seven regions are represented on the service-area hub instead.
+
+### Validation status
+
+- Source-level changes and committed static HTML were reviewed.
+- The local Python/Tailwind build pipeline and full filesystem link/JSON-LD QA were not executable through the connected GitHub interface in this session. Do not treat the build as verified until `python3 tools/build_all.py` (after installing npm dependencies) and the full link/JSON-LD/sitemap checks have been run in a build environment.
