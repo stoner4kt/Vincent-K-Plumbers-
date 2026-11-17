@@ -105,7 +105,8 @@ def service_areas_page():
     </section>''' + B.related_links_grid([
         ("Blocked Drains", "blocked-drains-johannesburg.html", "Drain clearing across Johannesburg."),
         ("Geyser Repair", "geyser-repair-johannesburg.html", "Geyser diagnosis and repairs."),
-        ("Bathroom Renovations", "bathroom-renovations-johannesburg.html", "Bathroom plumbing and installation.")
+        ("Bathroom Renovations", "bathroom-renovations-johannesburg.html", "Bathroom plumbing and installation."),
+        ("Waterproofing", "waterproofing-johannesburg.html", "Damp, wet walls and water ingress.")
     ]) + B.quote_cta_section()
     head = L.head(title, desc, url)
     ld = [L.local_business_schema(), L.webpage_schema(url, title, desc),
