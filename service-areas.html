@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>Plumber Service Areas Johannesburg | Vincent K Plumbers</title>
-  <meta name="description" content="Where Vincent K Plumbers works: Johannesburg, Midrand, Sandton, Centurion and surrounding suburbs. Call 068 134 3276 if you are not sure." />
+  <title>Johannesburg Plumber Service Areas | Vincent K Plumbers</title>
+  <meta name="description" content="Vincent K Plumbers serves all seven Johannesburg regions, Midrand and surrounding Gauteng areas. Call 068 134 3276 to arrange plumbing service." />
   <meta name="keywords" content="plumber Johannesburg, plumber Midrand, plumber near me, emergency plumber Johannesburg, Where Vincent K Plumbers works: Johannesburg, Midrand, Sandt" />
   <meta name="author" content="Vincent K Plumbers" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -27,7 +27,7 @@
   <meta property="og:locale" content="en_ZA" />
   <meta property="og:site_name" content="Vincent K Plumbers" />
   <meta property="og:title" content="Plumber Service Areas Johannesburg | Vincent K Plumbers" />
-  <meta property="og:description" content="Where Vincent K Plumbers works: Johannesburg, Midrand, Sandton, Centurion and surrounding suburbs. Call 068 134 3276 if you are not sure." />
+  <meta property="og:description" content="Vincent K Plumbers serves all seven Johannesburg regions, Midrand and surrounding Gauteng areas. Call 068 134 3276 to arrange plumbing service." />
   <meta property="og:image" content="https://vincentplumbing.co.za/images/brand/logo.jpg" />
   <meta property="og:image:width" content="640" />
   <meta property="og:image:height" content="640" />
@@ -36,7 +36,7 @@
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Plumber Service Areas Johannesburg | Vincent K Plumbers" />
-  <meta name="twitter:description" content="Where Vincent K Plumbers works: Johannesburg, Midrand, Sandton, Centurion and surrounding suburbs. Call 068 134 3276 if you are not sure." />
+  <meta name="twitter:description" content="Vincent K Plumbers serves all seven Johannesburg regions, Midrand and surrounding Gauteng areas. Call 068 134 3276 to arrange plumbing service." />
   <meta name="twitter:image" content="https://vincentplumbing.co.za/images/brand/logo.jpg" />
 
   <link rel="icon" type="image/jpeg" href="images/brand/logo.jpg" />
@@ -61,12 +61,15 @@
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
-      function trackConversion(eventName, details) {
+      window.trackConversion = function (eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
         }, details || {}));
-      }
+      };
+    } else {
+      // No-op until the owner adds the real GA4 measurement ID.
+      window.trackConversion = function () {};
     }
   </script>
 <script type="application/ld+json">
@@ -105,24 +108,12 @@
   "hasMap": "https://www.google.com/maps/search/?api=1&query=Vincent+K+Plumbers+505+Nancy+Ndamase+Street+Klipfontein+View+Midrand+Johannesburg",
   "areaServed": [
     {
-      "@type": "City",
-      "name": "Johannesburg"
+      "@type": "Place",
+      "name": "Klipfontein View"
     },
     {
       "@type": "City",
       "name": "Midrand"
-    },
-    {
-      "@type": "City",
-      "name": "Sandton"
-    },
-    {
-      "@type": "City",
-      "name": "Centurion"
-    },
-    {
-      "@type": "Place",
-      "name": "Klipfontein View"
     },
     {
       "@type": "Place",
@@ -150,11 +141,271 @@
     },
     {
       "@type": "Place",
+      "name": "Glen Austin"
+    },
+    {
+      "@type": "Place",
+      "name": "President Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Rabie Ridge"
+    },
+    {
+      "@type": "Place",
+      "name": "Ivory Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Diepsloot"
+    },
+    {
+      "@type": "Place",
       "name": "Fourways"
     },
     {
       "@type": "Place",
+      "name": "Sunninghill"
+    },
+    {
+      "@type": "Place",
+      "name": "Lonehill"
+    },
+    {
+      "@type": "Place",
+      "name": "Woodmead"
+    },
+    {
+      "@type": "Place",
+      "name": "Buccleuch"
+    },
+    {
+      "@type": "City",
+      "name": "Sandton"
+    },
+    {
+      "@type": "Place",
+      "name": "Bryanston"
+    },
+    {
+      "@type": "Place",
+      "name": "Douglasdale"
+    },
+    {
+      "@type": "Place",
       "name": "Randburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Northcliff"
+    },
+    {
+      "@type": "Place",
+      "name": "Rosebank"
+    },
+    {
+      "@type": "Place",
+      "name": "Parkwood"
+    },
+    {
+      "@type": "Place",
+      "name": "Norwood"
+    },
+    {
+      "@type": "Place",
+      "name": "Killarney"
+    },
+    {
+      "@type": "Place",
+      "name": "Alexandra"
+    },
+    {
+      "@type": "Place",
+      "name": "Wynberg"
+    },
+    {
+      "@type": "Place",
+      "name": "Morningside"
+    },
+    {
+      "@type": "Place",
+      "name": "Highlands North"
+    },
+    {
+      "@type": "Place",
+      "name": "Roodepoort"
+    },
+    {
+      "@type": "Place",
+      "name": "Florida"
+    },
+    {
+      "@type": "Place",
+      "name": "Bram Fischerville"
+    },
+    {
+      "@type": "Place",
+      "name": "Soweto"
+    },
+    {
+      "@type": "Place",
+      "name": "Doornkop"
+    },
+    {
+      "@type": "Place",
+      "name": "Diepkloof"
+    },
+    {
+      "@type": "Place",
+      "name": "Meadowlands"
+    },
+    {
+      "@type": "Place",
+      "name": "Dube"
+    },
+    {
+      "@type": "Place",
+      "name": "Orlando East"
+    },
+    {
+      "@type": "Place",
+      "name": "Orlando West"
+    },
+    {
+      "@type": "Place",
+      "name": "Johannesburg CBD"
+    },
+    {
+      "@type": "Place",
+      "name": "Newtown"
+    },
+    {
+      "@type": "Place",
+      "name": "Fordsburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Mayfair"
+    },
+    {
+      "@type": "Place",
+      "name": "Berea"
+    },
+    {
+      "@type": "Place",
+      "name": "Hillbrow"
+    },
+    {
+      "@type": "Place",
+      "name": "Glenvista"
+    },
+    {
+      "@type": "Place",
+      "name": "Mulbarton"
+    },
+    {
+      "@type": "Place",
+      "name": "Bassonia"
+    },
+    {
+      "@type": "Place",
+      "name": "Southgate"
+    },
+    {
+      "@type": "Place",
+      "name": "Ormonde"
+    },
+    {
+      "@type": "Place",
+      "name": "City Deep"
+    },
+    {
+      "@type": "Place",
+      "name": "Kensington"
+    },
+    {
+      "@type": "Place",
+      "name": "Benrose"
+    },
+    {
+      "@type": "Place",
+      "name": "Ennerdale"
+    },
+    {
+      "@type": "Place",
+      "name": "Orange Farm"
+    },
+    {
+      "@type": "Place",
+      "name": "Lenasia"
+    },
+    {
+      "@type": "Place",
+      "name": "Eldorado Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Protea"
+    },
+    {
+      "@type": "Place",
+      "name": "Lawley"
+    },
+    {
+      "@type": "Place",
+      "name": "Finetown"
+    },
+    {
+      "@type": "Place",
+      "name": "Zakariyya Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Vlakfontein"
+    },
+    {
+      "@type": "Place",
+      "name": "Nancefield"
+    },
+    {
+      "@type": "Place",
+      "name": "Stretford"
+    },
+    {
+      "@type": "Place",
+      "name": "Tembisa"
+    },
+    {
+      "@type": "Place",
+      "name": "Allandale"
+    },
+    {
+      "@type": "Place",
+      "name": "Edenvale"
+    },
+    {
+      "@type": "Place",
+      "name": "Bedfordview"
+    },
+    {
+      "@type": "Place",
+      "name": "Kempton Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Germiston"
+    },
+    {
+      "@type": "Place",
+      "name": "Alberton"
+    },
+    {
+      "@type": "City",
+      "name": "Centurion"
+    },
+    {
+      "@type": "Place",
+      "name": "Olievenhoutbosch"
     }
   ],
   "openingHoursSpecification": [
@@ -252,7 +503,7 @@
   "@type": "WebPage",
   "url": "https://vincentplumbing.co.za/service-areas.html",
   "name": "Plumber Service Areas Johannesburg | Vincent K Plumbers",
-  "description": "Where Vincent K Plumbers works: Johannesburg, Midrand, Sandton, Centurion and surrounding suburbs. Call 068 134 3276 if you are not sure.",
+  "description": "Vincent K Plumbers serves all seven Johannesburg regions, Midrand and surrounding Gauteng areas. Call 068 134 3276 to arrange plumbing service.",
   "inLanguage": "en-ZA",
   "isPartOf": {
     "@id": "https://vincentplumbing.co.za/#website"
@@ -466,34 +717,44 @@
       </div>
     </section>
     <section class="py-14 sm:py-16">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mb-10 reveal">
-          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Where we work</span>
-          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Suburbs we serve around Johannesburg &amp; Midrand</h2>
-          <p class="text-slate-600 mt-2 text-sm sm:text-base">Our team travels to these areas for plumbing, geyser, drain, paving and irrigation work.</p>
-        </div>
-        <p class="text-xs font-semibold text-slate-500 mb-4 uppercase tracking-wide">[VERIFY] Confirm your exact street coverage with the owner before relying on this list.</p>
-        <ul class="flex flex-wrap gap-2.5"><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Klipfontein View</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Midrand</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Waterfall City</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Halfway House</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Vorna Valley</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Noordwyk</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Kyalami</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Carlswald</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Glen Austin</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">President Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Rabie Ridge</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Ivory Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Tembisa</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Allandale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Buccleuch</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Diepsloot</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Sunninghill</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Lonehill</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Fourways</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bryanston</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Sandton</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Woodmead</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Randburg</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Rosebank</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Johannesburg CBD</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Edenvale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bedfordview</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Kempton Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Germiston</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Alberton</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Roodepoort</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Soweto</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Centurion</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Olievenhoutbosch</li></ul>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-9 reveal">
+      <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Johannesburg-wide coverage</span>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Plumbing services across all seven Johannesburg regions</h2>
+      <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">We serve homes and businesses throughout the City of Johannesburg, including its seven administrative regions. The localities below are examples of the areas within each region, not a suburb-by-suburb limit on coverage.</p>
+    </div>
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4"><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region A — Midrand &amp; the North</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Midrand, Diepsloot, Ivory Park, Fourways, Sunninghill and Woodmead</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region B — Randburg &amp; Northcliff</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Randburg, Northcliff, Rosebank, Bryanston and surrounding neighbourhoods</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region C — Roodepoort &amp; the West</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Roodepoort, Florida, Northgate and Bram Fischerville</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region D — Soweto</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Soweto, Diepkloof, Doornkop, Dube, Meadowlands and Orlando</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region E — Sandton &amp; Alexandra</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Sandton, Alexandra, Wynberg, Norwood, Morningside and nearby suburbs</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region F — Inner City &amp; Johannesburg South</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Johannesburg CBD, Newtown, Fordsburg, Mayfair, Berea, Hillbrow, Glenvista and Southgate</p></article><article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">Region G — Johannesburg Deep South</h3><p class="text-sm text-slate-600 mt-2 leading-relaxed">Lenasia, Ennerdale, Orange Farm, Eldorado Park, Protea, Lawley and surrounding localities</p></article></div>
+  </div>
+</section>
+<section class="py-14 bg-slate-50 border-y border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-3xl mb-8 reveal">
+      <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Johannesburg &amp; nearby Gauteng</span>
+      <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Areas we serve</h2>
+      <p class="text-slate-600 mt-2 text-sm sm:text-base">Our coverage also includes surrounding areas such as Tembisa, Edenvale, Bedfordview, Kempton Park, Germiston, Alberton and Centurion.</p>
+    </div>
+    <ul class="flex flex-wrap gap-2.5"><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Klipfontein View</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Midrand</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Waterfall City</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Halfway House</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Vorna Valley</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Noordwyk</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Kyalami</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Carlswald</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Glen Austin</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">President Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Rabie Ridge</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Ivory Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Diepsloot</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Fourways</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Sunninghill</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Lonehill</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Woodmead</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Buccleuch</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Sandton</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bryanston</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Douglasdale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Randburg</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Northcliff</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Rosebank</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Parkwood</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Norwood</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Killarney</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Alexandra</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Wynberg</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Morningside</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Highlands North</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Roodepoort</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Florida</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bram Fischerville</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Soweto</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Doornkop</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Diepkloof</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Meadowlands</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Dube</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Orlando East</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Orlando West</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Johannesburg CBD</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Newtown</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Fordsburg</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Mayfair</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Berea</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Hillbrow</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Glenvista</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Mulbarton</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bassonia</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Southgate</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Ormonde</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">City Deep</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Kensington</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Benrose</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Ennerdale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Orange Farm</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Lenasia</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Eldorado Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Protea</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Lawley</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Finetown</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Zakariyya Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Vlakfontein</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Nancefield</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Stretford</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Tembisa</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Allandale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Edenvale</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Bedfordview</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Kempton Park</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Germiston</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Alberton</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Centurion</li><li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">Olievenhoutbosch</li></ul>
+    <p class="text-sm text-slate-600 mt-6">Not sure which region your street falls in? Call or WhatsApp <a class="font-bold text-sky-700" href="tel:+27681343276">068 134 3276</a> and provide your suburb or address so we can arrange the right service.</p>
+  </div>
+</section>
+<section class="py-14 bg-white border-b border-slate-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid lg:grid-cols-12 gap-8 items-center">
+      <div class="lg:col-span-7 reveal">
+        <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Based in Klipfontein View</span>
+        <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">A Midrand base serving Greater Johannesburg</h2>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">Our business is based at 505 Nancy Ndamase Street in Klipfontein View, Midrand. From this base, we take bookings across Johannesburg and nearby Gauteng communities.</p>
+        <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">We provide plumbing, geyser, drain, leak detection, paving, irrigation and water purification services. Each service page explains the work available and how to request a quote.</p>
+        <a href="index.html#contact" class="inline-flex items-center gap-2 mt-5 text-sm font-bold text-sky-700 hover:text-sky-900">See our contact details and map &rarr;</a>
       </div>
-    </section>
-    <section class="py-14 bg-white border-y border-slate-200">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid lg:grid-cols-12 gap-8 items-center">
-          <div class="lg:col-span-7 reveal">
-            <span class="text-xs font-bold uppercase tracking-widest text-sky-600">From Klipfontein View</span>
-            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">A local plumber, not a call centre</h2>
-            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">We are based at 505 Nancy Ndamase Street in Klipfontein View, Midrand, so most of our work is within easy reach of Midrand and northern Johannesburg. For the same reason, we can usually get to a call-out faster than a company dispatching from the other side of the city.</p>
-            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">Our service pages are written for the whole Greater Johannesburg area. Each lists exactly what is included and the questions we get asked most, so you know what to expect before you call.</p>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 mt-5 text-sm font-bold text-sky-700 hover:text-sky-900">See our address and map &rarr;</a>
-          </div>
-          <div class="lg:col-span-5 reveal">
-            <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900 h-72">
-              <iframe title="Vincent K Plumbers service area map - Klipfontein View, Midrand, Johannesburg" src="https://maps.google.com/maps?q=Vincent%20K%20Plumbers%2C%20505%20Nancy%20Ndamase%20Street%2C%20Klipfontein%20View%2C%20Midrand%2C%20Johannesburg%2C%20South%20Africa&t=&z=10&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-          </div>
+      <div class="lg:col-span-5 reveal">
+        <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900 h-72">
+          <iframe title="Vincent K Plumbers service area map - Klipfontein View, Midrand, Johannesburg" src="https://maps.google.com/maps?q=Vincent%20K%20Plumbers%2C%20505%20Nancy%20Ndamase%20Street%2C%20Klipfontein%20View%2C%20Midrand%2C%20Johannesburg%2C%20South%20Africa&t=&z=10&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
-    </section><section class="py-14 bg-white border-y border-slate-200"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-end justify-between gap-4 mb-8 reveal"><div><span class="text-xs font-bold uppercase tracking-widest text-sky-600">Keep exploring</span><h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Related services</h2></div><a href="index.html#services" class="hidden sm:inline-flex text-sm font-bold text-sky-700 hover:text-sky-900">All services &rarr;</a></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><a href="blocked-drains-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Blocked Drains</h3><p class="text-sm text-slate-600 mt-2 flex-1">Fast drain clearing across the city.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a><a href="geyser-repair-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Geyser Repair</h3><p class="text-sm text-slate-600 mt-2 flex-1">Hot water fixed fast, wherever you are.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a><a href="bathroom-renovations-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Bathroom Renovations</h3><p class="text-sm text-slate-600 mt-2 flex-1">Full plumbing for your new bathroom.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a></div></div></section><section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    </div>
+  </div>
+</section><section class="py-14 bg-white border-y border-slate-200"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-end justify-between gap-4 mb-8 reveal"><div><span class="text-xs font-bold uppercase tracking-widest text-sky-600">Keep exploring</span><h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Related services</h2></div><a href="index.html#services" class="hidden sm:inline-flex text-sm font-bold text-sky-700 hover:text-sky-900">All services &rarr;</a></div><div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"><a href="blocked-drains-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Blocked Drains</h3><p class="text-sm text-slate-600 mt-2 flex-1">Fast drain clearing across the city.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a><a href="geyser-repair-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Geyser Repair</h3><p class="text-sm text-slate-600 mt-2 flex-1">Hot water fixed fast, wherever you are.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a><a href="bathroom-renovations-johannesburg.html" class="service-card group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col hover:border-sky-300"><span class="w-11 h-11 rounded-xl bg-sky-50 text-sky-700 flex items-center justify-center mb-4 group-hover:bg-sky-600 group-hover:text-white transition-colors"><svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span><h3 class="font-display font-extrabold text-lg text-slate-900">Bathroom Renovations</h3><p class="text-sm text-slate-600 mt-2 flex-1">Full plumbing for your new bathroom.</p><span class="mt-4 inline-flex items-center gap-1.5 text-sm font-bold text-sky-700">View service<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg></span></a></div></div></section><section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
       <div class="rounded-3xl bg-gradient-to-r from-sky-600 to-sky-800 text-white p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl reveal">
         <div class="text-center lg:text-left max-w-2xl">
           <h2 class="font-display text-2xl sm:text-4xl font-extrabold">Ready to solve your plumbing, gas or paving project?</h2>
