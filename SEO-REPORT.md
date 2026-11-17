@@ -186,7 +186,7 @@ Repo: `github.com/stoner4kt/Vincent-K-Plumbers-`
 - The service-area page now explains Johannesburg-wide coverage and retains the verified Klipfontein View, Midrand business base and contact details.
 - The `areaServed` data in the shared LocalBusiness schema and committed HTML pages has been expanded to reflect the seven regions and surrounding localities.
 - The GA4 Measurement ID remains `[GA4-MEASUREMENT-ID]` for the owner to replace at the final stage. Conversion hooks now safely no-op while the ID is a placeholder, then dispatch the existing event names to GA4 when configured.
-- The Reviews page remains in a Coming Soon state. No testimonials, ratings, `Review` schema or `aggregateRating` have been added because the client has not yet supplied verifiable review content.
+- The homepage's four unverified testimonial cards and star ratings were removed. Both the homepage feedback section and Reviews page now show Coming Soon states. No testimonials, ratings, `Review` schema or `aggregateRating` are published because the client has not yet supplied verifiable review content.
 - Existing verified Facebook and Google Business Profile URLs remain the only `sameAs` profile links.
 - Two indirect service FAQ answers were rewritten to lead with useful answers; their visible copy and matching FAQ structured data are updated together.
 - The sitemap generator now excludes `404.html` and any page marked `noindex`; the committed sitemap contains 25 indexable URLs and no 404 entry.
