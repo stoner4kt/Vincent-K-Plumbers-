@@ -102,6 +102,12 @@ for page in sorted(indexable):
                for other_page, source in page_sources.items() if other_page != page):
         errors.append(f"{page.relative_to(ROOT)}: indexable page has no internal inbound link")
 
+home = (ROOT / "index.html").read_text(encoding="utf-8")
+if "Customer reviews coming soon" not in home:
+    errors.append("index.html: expected the Coming Soon feedback state")
+if "out of 5 stars" in home or '"aggregateRating"' in home or '"@type": "Review"' in home:
+    errors.append("index.html: unverified testimonials or review/rating schema must not be published")
+
 reviews = (ROOT / "reviews.html").read_text(encoding="utf-8")
 if "Reviews coming soon" not in reviews:
     errors.append("reviews.html: expected the Coming Soon state")
