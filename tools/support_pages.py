@@ -259,7 +259,7 @@ def contact_page():
 def reviews_page():
     url = f"{L.SITE}/reviews.html"
     title = "Reviews | Vincent K Plumbers Johannesburg"
-    desc = "Read real, verified reviews from clients in Johannesburg and Midrand. Coming soon — contact Vincent K Plumbers on 068 134 3276 to share your experience."
+    desc = "Verified customer reviews for Vincent K Plumbers in Johannesburg and Midrand will appear here as they become available. Contact us on 068 134 3276."
     body = simple_hero("Client Reviews", "We value honest feedback. This page will grow as we collect verified reviews from real clients.", breadcrumb_label="Reviews") + trust_strip() + f'''
     <section class="py-14 sm:py-16">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -270,7 +270,7 @@ def reviews_page():
           <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-4">Reviews coming soon</h2>
           <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-xl mx-auto">We are collecting verified customer feedback before publishing reviews. No testimonials or star ratings are displayed yet. Please check back soon.</p>
           <div class="flex flex-wrap justify-center gap-3 mt-6">
-            <a href="https://share.google/71GsegnOVWnSnEVxC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Read our Google reviews</a>
+            <a href="https://share.google/71GsegnOVWnSnEVxC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Visit our Google Business Profile</a>
             <a href="https://www.facebook.com/share/1CLg3WnacX/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Find us on Facebook</a>
           </div>
         </div>
