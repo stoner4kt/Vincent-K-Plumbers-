@@ -63,7 +63,7 @@ def service_areas_page():
         "Plumber Serving Johannesburg &amp; Surrounding Areas",
         "Vincent K Plumbers is based in Klipfontein View, Midrand and provides plumbing and related property services throughout Johannesburg and nearby Gauteng areas.",
         breadcrumb_label="Service Areas"
-    ) + trust_strip() + f\''' 
+    ) + trust_strip() + f''' 
     <section class="py-14 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="max-w-3xl mb-9 reveal">
@@ -110,7 +110,7 @@ def service_areas_page():
     head = L.head(title, desc, url)
     ld = [L.local_business_schema(), L.webpage_schema(url, title, desc),
           L.breadcrumb_schema([("Home", f"{L.SITE}/"), ("Service Areas", url)])]
-    head = head.replace("</head>", "\\n".join(L.json_ld(x) for x in ld) + "\\n</head>")
+    head = head.replace("</head>", "\n".join(L.json_ld(x) for x in ld) + "\n</head>")
     return B.page(head, body)
 
 def suburb_page_placeholder(slug, suburb, primary_service, note):
