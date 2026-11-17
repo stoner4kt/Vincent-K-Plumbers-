@@ -19,7 +19,16 @@ def main():
     today = datetime.date.today().isoformat()
     urls = []
     # Root pages first (home first), then guides.
-    htmls = [f for f in os.listdir(ROOT) if f.endswith(".html") and not f.startswith(".")]
+    htmls = []
+    for name in os.listdir(ROOT):
+        if not name.endswith(".html") or name.startswith(".") or name == "404.html":
+            continue
+        page = os.path.join(ROOT, name)
+        with open(page, "r", encoding="utf-8") as source:
+            html = source.read()
+        if re.search(r'<meta\\s+name=["\\']robots["\\']\\s+content=["\\'][^"\\']*noindex', html, re.I):
+            continue
+        htmls.append(name)
     htmls.sort(key=lambda f: (f != "index.html", f))
     for f in htmls:
         path = os.path.join(ROOT, f)
@@ -32,7 +41,12 @@ def main():
     for g in guides:
         if not g.endswith(".html"):
             continue
-        mtime = datetime.datetime.fromtimestamp(os.path.getmtime(os.path.join(guides_dir, g))).date().isoformat()
+        guide_path = os.path.join(guides_dir, g)
+        with open(guide_path, "r", encoding="utf-8") as source:
+            guide_html = source.read()
+        if re.search(r'<meta\\s+name=["\\']robots["\\']\\s+content=["\\'][^"\\']*noindex', guide_html, re.I):
+            continue
+        mtime = datetime.datetime.fromtimestamp(os.path.getmtime(guide_path)).date().isoformat()
         urls.append((f"{SITE}/guides/{g}", mtime))
 
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
