@@ -61,12 +61,15 @@
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
-      function trackConversion(eventName, details) {
+      window.trackConversion = function (eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
         }, details || {}));
-      }
+      };
+    } else {
+      // No-op until the owner adds the real GA4 measurement ID.
+      window.trackConversion = function () {};
     }
   </script>
 <script type="application/ld+json">
@@ -121,6 +124,34 @@
       "name": "Centurion"
     },
     {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region A"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region B"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region C"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region D"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region E"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region F"
+    },
+    {
+      "@type": "AdministrativeArea",
+      "name": "City of Johannesburg Region G"
+    },
+    {
       "@type": "Place",
       "name": "Klipfontein View"
     },
@@ -150,11 +181,263 @@
     },
     {
       "@type": "Place",
+      "name": "Glen Austin"
+    },
+    {
+      "@type": "Place",
+      "name": "President Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Rabie Ridge"
+    },
+    {
+      "@type": "Place",
+      "name": "Ivory Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Diepsloot"
+    },
+    {
+      "@type": "Place",
       "name": "Fourways"
     },
     {
       "@type": "Place",
+      "name": "Sunninghill"
+    },
+    {
+      "@type": "Place",
+      "name": "Lonehill"
+    },
+    {
+      "@type": "Place",
+      "name": "Woodmead"
+    },
+    {
+      "@type": "Place",
+      "name": "Buccleuch"
+    },
+    {
+      "@type": "Place",
+      "name": "Bryanston"
+    },
+    {
+      "@type": "Place",
+      "name": "Douglasdale"
+    },
+    {
+      "@type": "Place",
       "name": "Randburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Northcliff"
+    },
+    {
+      "@type": "Place",
+      "name": "Rosebank"
+    },
+    {
+      "@type": "Place",
+      "name": "Parkwood"
+    },
+    {
+      "@type": "Place",
+      "name": "Norwood"
+    },
+    {
+      "@type": "Place",
+      "name": "Killarney"
+    },
+    {
+      "@type": "Place",
+      "name": "Alexandra"
+    },
+    {
+      "@type": "Place",
+      "name": "Wynberg"
+    },
+    {
+      "@type": "Place",
+      "name": "Morningside"
+    },
+    {
+      "@type": "Place",
+      "name": "Highlands North"
+    },
+    {
+      "@type": "Place",
+      "name": "Roodepoort"
+    },
+    {
+      "@type": "Place",
+      "name": "Florida"
+    },
+    {
+      "@type": "Place",
+      "name": "Bram Fischerville"
+    },
+    {
+      "@type": "Place",
+      "name": "Soweto"
+    },
+    {
+      "@type": "Place",
+      "name": "Doornkop"
+    },
+    {
+      "@type": "Place",
+      "name": "Diepkloof"
+    },
+    {
+      "@type": "Place",
+      "name": "Meadowlands"
+    },
+    {
+      "@type": "Place",
+      "name": "Dube"
+    },
+    {
+      "@type": "Place",
+      "name": "Orlando East"
+    },
+    {
+      "@type": "Place",
+      "name": "Orlando West"
+    },
+    {
+      "@type": "Place",
+      "name": "Johannesburg CBD"
+    },
+    {
+      "@type": "Place",
+      "name": "Newtown"
+    },
+    {
+      "@type": "Place",
+      "name": "Fordsburg"
+    },
+    {
+      "@type": "Place",
+      "name": "Mayfair"
+    },
+    {
+      "@type": "Place",
+      "name": "Berea"
+    },
+    {
+      "@type": "Place",
+      "name": "Hillbrow"
+    },
+    {
+      "@type": "Place",
+      "name": "Glenvista"
+    },
+    {
+      "@type": "Place",
+      "name": "Mulbarton"
+    },
+    {
+      "@type": "Place",
+      "name": "Bassonia"
+    },
+    {
+      "@type": "Place",
+      "name": "Southgate"
+    },
+    {
+      "@type": "Place",
+      "name": "Ormonde"
+    },
+    {
+      "@type": "Place",
+      "name": "City Deep"
+    },
+    {
+      "@type": "Place",
+      "name": "Kensington"
+    },
+    {
+      "@type": "Place",
+      "name": "Benrose"
+    },
+    {
+      "@type": "Place",
+      "name": "Ennerdale"
+    },
+    {
+      "@type": "Place",
+      "name": "Orange Farm"
+    },
+    {
+      "@type": "Place",
+      "name": "Lenasia"
+    },
+    {
+      "@type": "Place",
+      "name": "Eldorado Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Protea"
+    },
+    {
+      "@type": "Place",
+      "name": "Lawley"
+    },
+    {
+      "@type": "Place",
+      "name": "Finetown"
+    },
+    {
+      "@type": "Place",
+      "name": "Zakariyya Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Vlakfontein"
+    },
+    {
+      "@type": "Place",
+      "name": "Nancefield"
+    },
+    {
+      "@type": "Place",
+      "name": "Stretford"
+    },
+    {
+      "@type": "Place",
+      "name": "Tembisa"
+    },
+    {
+      "@type": "Place",
+      "name": "Allandale"
+    },
+    {
+      "@type": "Place",
+      "name": "Edenvale"
+    },
+    {
+      "@type": "Place",
+      "name": "Bedfordview"
+    },
+    {
+      "@type": "Place",
+      "name": "Kempton Park"
+    },
+    {
+      "@type": "Place",
+      "name": "Germiston"
+    },
+    {
+      "@type": "Place",
+      "name": "Alberton"
+    },
+    {
+      "@type": "Place",
+      "name": "Olievenhoutbosch"
     }
   ],
   "openingHoursSpecification": [
@@ -408,7 +691,7 @@
       "name": "How long does a bathroom renovation take?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It depends on scope. We plan a realistic schedule with you before starting, so you know exactly what to expect."
+        "text": "The time required depends on the size of the bathroom, the fixtures being installed, the amount of plumbing work and coordination with tiling or building work. We agree a realistic schedule with you before starting."
       }
     },
     {
