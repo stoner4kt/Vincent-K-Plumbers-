@@ -74,8 +74,12 @@ def area_served(extra=None):
     ]
     if extra:
         base = base + [x for x in extra if x not in base]
-    return [{"@type": "City", "name": n} if n in ("Johannesburg", "Midrand", "Sandton", "Centurion")
-            else {"@type": "Place", "name": n} for n in base]
+    return [
+        {"@type": "City", "name": n} if n in ("Johannesburg", "Midrand", "Sandton", "Centurion")
+        else {"@type": "AdministrativeArea", "name": n} if n.startswith("City of Johannesburg Region")
+        else {"@type": "Place", "name": n}
+        for n in base
+    ]
 
 
 def opening_hours():
