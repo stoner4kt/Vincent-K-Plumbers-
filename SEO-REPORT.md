@@ -195,4 +195,4 @@ Repo: `github.com/stoner4kt/Vincent-K-Plumbers-`
 ### Validation status
 
 - Source-level changes and committed static HTML were reviewed.
-- The local Python/Tailwind build pipeline and full filesystem link/JSON-LD QA were not executable through the connected GitHub interface in this session. Do not treat the build as verified until `python3 tools/build_all.py` (after installing npm dependencies) and the full link/JSON-LD/sitemap checks have been run in a build environment.
+- A repeatable GitHub Actions workflow (`.github/workflows/site-qa.yml`) and stdlib QA runner (`tools/qa_site.py`) have been added to run the Python/Tailwind build and check relative links, JSON-LD, sitemap parity, internal reachability, review safeguards and the GA4 placeholder on pull requests. The workflow result is pending; do not treat the build as verified until the PR check completes successfully.
