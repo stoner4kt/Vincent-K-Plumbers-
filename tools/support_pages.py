@@ -102,7 +102,7 @@ def service_areas_page():
           </div>
         </div>
       </div>
-    </section>\''' + B.related_links_grid([
+    </section>''' + B.related_links_grid([
         ("Blocked Drains", "blocked-drains-johannesburg.html", "Drain clearing across Johannesburg."),
         ("Geyser Repair", "geyser-repair-johannesburg.html", "Geyser diagnosis and repairs."),
         ("Bathroom Renovations", "bathroom-renovations-johannesburg.html", "Bathroom plumbing and installation.")
