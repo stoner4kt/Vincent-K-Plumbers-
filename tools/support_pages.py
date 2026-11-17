@@ -82,6 +82,7 @@ def service_areas_page():
           <p class="text-slate-600 mt-2 text-sm sm:text-base">Our coverage also includes surrounding areas such as Tembisa, Edenvale, Bedfordview, Kempton Park, Germiston, Alberton and Centurion.</p>
         </div>
         <ul class="flex flex-wrap gap-2.5">{chips}</ul>
+        <p class="text-sm text-slate-600 mt-5"><a class="font-bold text-sky-700 hover:text-sky-900" href="waterproofing-johannesburg.html">View waterproofing services across Johannesburg &rarr;</a></p>
         <p class="text-sm text-slate-600 mt-6">Not sure which region your street falls in? Call or WhatsApp <a class="font-bold text-sky-700" href="tel:+27681343276">068 134 3276</a> and provide your suburb or address so we can arrange the right service.</p>
       </div>
     </section>
