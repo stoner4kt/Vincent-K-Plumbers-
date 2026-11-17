@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 SITE = "https://vincentplumbing.co.za"
 errors: list[str] = []
 html_files = sorted(p for p in ROOT.rglob("*.html")
-                    if ".git" not in p.parts and "node_modules" not in p.parts)
+                    if ".git" not in p.parts and "node_modules" not in p.parts and "_partials" not in p.parts)
 indexable: set[Path] = set()
 inbound: dict[Path, int] = {}
 jsonld_count = 0
