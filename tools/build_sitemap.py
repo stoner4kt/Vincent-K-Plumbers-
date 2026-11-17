@@ -26,7 +26,7 @@ def main():
         page = os.path.join(ROOT, name)
         with open(page, "r", encoding="utf-8") as source:
             html = source.read()
-        if re.search(r'<meta\\s+name=["\\']robots["\\']\\s+content=["\\'][^"\\']*noindex', html, re.I):
+        if re.search(r"<meta\\s+name=['\\"]robots['\\"]\\s+content=['\\"][^'\\"]*noindex", html, re.I):
             continue
         htmls.append(name)
     htmls.sort(key=lambda f: (f != "index.html", f))
@@ -44,7 +44,7 @@ def main():
         guide_path = os.path.join(guides_dir, g)
         with open(guide_path, "r", encoding="utf-8") as source:
             guide_html = source.read()
-        if re.search(r'<meta\\s+name=["\\']robots["\\']\\s+content=["\\'][^"\\']*noindex', guide_html, re.I):
+        if re.search(r"<meta\\s+name=['\\"]robots['\\"]\\s+content=['\\"][^'\\"]*noindex", guide_html, re.I):
             continue
         mtime = datetime.datetime.fromtimestamp(os.path.getmtime(guide_path)).date().isoformat()
         urls.append((f"{SITE}/guides/{g}", mtime))
