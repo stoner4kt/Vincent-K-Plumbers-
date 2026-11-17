@@ -88,10 +88,19 @@ if sitemap_urls != expected_urls:
     extra = sorted(sitemap_urls - expected_urls)
     errors.append(f"sitemap mismatch: missing={missing}; extra={extra}")
 
-indexable_relpaths = {p.relative_to(ROOT).as_posix() for p in indexable}
-for rel in sorted(indexable_relpaths):
-    if rel != "index.html" and inbound.get(rel, 0) == 0:
-        errors.append(f"{rel}: indexable page has no internal inbound link")
+page_sources = {page: page.read_text(encoding="utf-8") for page in indexable}
+for page in sorted(indexable):
+    if page.name == "index.html":
+        continue
+    # Check the actual href text across other indexable pages. This is independent
+    # of whether a link is root-relative, page-relative, or nested under guides/.
+    filename_pattern = re.compile(
+        r'href=["\\'][^"\\']*' + re.escape(page.name) + r'(?:[?#][^"\\']*)?["\\']',
+        re.I
+    )
+    if not any(filename_pattern.search(source)
+               for other_page, source in page_sources.items() if other_page != page):
+        errors.append(f"{page.relative_to(ROOT)}: indexable page has no internal inbound link")
 
 reviews = (ROOT / "reviews.html").read_text(encoding="utf-8")
 if "Reviews coming soon" not in reviews:
