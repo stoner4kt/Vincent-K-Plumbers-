@@ -400,7 +400,7 @@ FAQS = {
     "geyser-replacement-johannesburg": [
         ("How quickly can you replace a burst geyser?", "We treat burst geysers as priority call-outs in Johannesburg and Midrand. Phone 068 134 3276 and we will get to you as fast as we can, often the same day."),
         ("What is included in a geyser replacement?", "A correctly sized geyser, drip tray, pressure control valve, vacuum breaker, connection pipework and testing before we leave. We also remove the old unit."),
-        ("Should I replace with electric, gas or solar?", "It depends on your budget, load-shedding risk and running costs. We talk you through the options honestly so you choose what suits your home."),
+        ("Should I replace with electric, gas or solar?", "Electric is generally the lower-upfront-cost option, gas provides hot water during load shedding, and solar can reduce daytime electricity use. The right choice depends on your budget, household demand and roof suitability."),
         ("Can you move my geyser during replacement?", "Yes. As part of a renovation we relocate geysers, including moving them out of the ceiling or into a safer spot."),
         ("Do you install the drip tray and safety valves?", "Always. A geyser without the correct safety components is a leak waiting to happen."),
     ],
@@ -421,7 +421,7 @@ FAQS = {
     "bathroom-renovations-johannesburg": [
         ("Do you do first-fix and second-fix plumbing?", "Yes. We handle the whole plumbing scope: strip-out, first-fix pipework in the walls and floors, drainage, and second-fix installation of toilets, basins, mixers and showers."),
         ("Can you work alongside my tiler and builder?", "Absolutely. We coordinate with your team so the plumbing and tiling sequence works, or we can arrange the full bathroom project."),
-        ("How long does a bathroom renovation take?", "It depends on scope. We plan a realistic schedule with you before starting, so you know exactly what to expect."),
+        ("How long does a bathroom renovation take?", "The time required depends on the size of the bathroom, the fixtures being installed, the amount of plumbing work and coordination with tiling or building work. We agree a realistic schedule with you before starting."),
         ("Do you waterproof the shower before tiling?", "Yes. Wet-wall and shower-tray waterproofing is part of the job we do before tiling starts."),
         ("What type of bathroom is covered?", "Full renovations, guest bathrooms, en-suites, and complete new bathrooms in extensions — any size."),
     ],
