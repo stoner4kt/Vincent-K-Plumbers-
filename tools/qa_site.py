@@ -15,7 +15,7 @@ errors: list[str] = []
 html_files = sorted(p for p in ROOT.rglob("*.html")
                     if ".git" not in p.parts and "node_modules" not in p.parts and "_partials" not in p.parts)
 indexable: set[Path] = set()
-inbound: dict[Path, int] = {}
+inbound: dict[str, int] = {}
 jsonld_count = 0
 
 for page in html_files:
@@ -58,8 +58,13 @@ for page in html_files:
         target = target.resolve()
         if not target.exists():
             errors.append(f"{page.relative_to(ROOT)}: broken href {href}")
-        elif target.suffix == ".html" and target in indexable and target != page:
-            inbound[target] = inbound.get(target, 0) + 1
+        elif target.suffix == ".html":
+            try:
+                target_rel = target.relative_to(ROOT).as_posix()
+            except ValueError:
+                target_rel = ""
+            if target_rel in {p.relative_to(ROOT).as_posix() for p in indexable} and target != page:
+                inbound[target_rel] = inbound.get(target_rel, 0) + 1
 
 sitemap_path = ROOT / "sitemap.xml"
 try:
@@ -83,9 +88,10 @@ if sitemap_urls != expected_urls:
     extra = sorted(sitemap_urls - expected_urls)
     errors.append(f"sitemap mismatch: missing={missing}; extra={extra}")
 
-for page in sorted(indexable):
-    if page.name != "index.html" and inbound.get(page, 0) == 0:
-        errors.append(f"{page.relative_to(ROOT)}: indexable page has no internal inbound link")
+indexable_relpaths = {p.relative_to(ROOT).as_posix() for p in indexable}
+for rel in sorted(indexable_relpaths):
+    if rel != "index.html" and inbound.get(rel, 0) == 0:
+        errors.append(f"{rel}: indexable page has no internal inbound link")
 
 reviews = (ROOT / "reviews.html").read_text(encoding="utf-8")
 if "Reviews coming soon" not in reviews:
