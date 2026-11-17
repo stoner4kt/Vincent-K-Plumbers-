@@ -38,48 +38,82 @@ def simple_hero(title, subtitle, breadcrumb_label=None):
 
 def service_areas_page():
     url = f"{L.SITE}/service-areas.html"
-    title = "Plumber Service Areas Johannesburg | Vincent K Plumbers"
-    desc = "Where Vincent K Plumbers works: Johannesburg, Midrand, Sandton, Centurion and surrounding suburbs. Call 068 134 3276 if you are not sure."
-    chips = "".join(f'<li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">{a}</li>' for a in SERVICE_AREAS)
-    body = simple_hero("Plumber for Johannesburg, Midrand &amp; Beyond", "Vincent K Plumbers dispatches from Klipfontein View, Midrand and works across Johannesburg and Gauteng. If you are not sure whether we cover your street, call 068 134 3276 and ask.",
-                       breadcrumb_label="Service Areas") + trust_strip() + f'''
+    title = "Johannesburg Plumber Service Areas | Vincent K Plumbers"
+    desc = "Vincent K Plumbers serves all seven Johannesburg regions, Midrand and surrounding Gauteng areas. Call 068 134 3276 to arrange plumbing service."
+    chips = "".join(
+        f'<li class="px-3.5 py-2 rounded-xl bg-white border border-slate-200 text-xs sm:text-sm font-semibold text-slate-800 shadow-2xs">{a}</li>'
+        for a in SERVICE_AREAS
+    )
+    regions = [
+        ("Region A — Midrand &amp; the North", "Midrand, Diepsloot, Ivory Park, Fourways, Sunninghill and Woodmead"),
+        ("Region B — Randburg &amp; Northcliff", "Randburg, Northcliff, Rosebank, Bryanston and surrounding neighbourhoods"),
+        ("Region C — Roodepoort &amp; the West", "Roodepoort, Florida, Northgate and Bram Fischerville"),
+        ("Region D — Soweto", "Soweto, Diepkloof, Doornkop, Dube, Meadowlands and Orlando"),
+        ("Region E — Sandton &amp; Alexandra", "Sandton, Alexandra, Wynberg, Norwood, Morningside and nearby suburbs"),
+        ("Region F — Inner City &amp; Johannesburg South", "Johannesburg CBD, Newtown, Fordsburg, Mayfair, Berea, Hillbrow, Glenvista and Southgate"),
+        ("Region G — Johannesburg Deep South", "Lenasia, Ennerdale, Orange Farm, Eldorado Park, Protea, Lawley and surrounding localities"),
+    ]
+    region_cards = "".join(
+        f'<article class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">'
+        f'<h3 class="font-display text-base sm:text-lg font-extrabold text-slate-900">{name}</h3>'
+        f'<p class="text-sm text-slate-600 mt-2 leading-relaxed">{areas}</p></article>'
+        for name, areas in regions
+    )
+    body = simple_hero(
+        "Plumber Serving Johannesburg &amp; Surrounding Areas",
+        "Vincent K Plumbers is based in Klipfontein View, Midrand and provides plumbing and related property services throughout Johannesburg and nearby Gauteng areas.",
+        breadcrumb_label="Service Areas"
+    ) + trust_strip() + f''' 
     <section class="py-14 sm:py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mb-10 reveal">
-          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Where we work</span>
-          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Suburbs we serve around Johannesburg &amp; Midrand</h2>
-          <p class="text-slate-600 mt-2 text-sm sm:text-base">Our team travels to these areas for plumbing, geyser, drain, paving and irrigation work.</p>
+        <div class="max-w-3xl mb-9 reveal">
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Johannesburg-wide coverage</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Plumbing services across all seven Johannesburg regions</h2>
+          <p class="text-slate-600 mt-3 text-sm sm:text-base leading-relaxed">We serve homes and businesses throughout the City of Johannesburg, including its seven administrative regions. The localities below are examples of the areas within each region, not a suburb-by-suburb limit on coverage.</p>
         </div>
-        <p class="text-xs font-semibold text-slate-500 mb-4 uppercase tracking-wide">[VERIFY] Confirm your exact street coverage with the owner before relying on this list.</p>
-        <ul class="flex flex-wrap gap-2.5">{chips}</ul>
+        <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">{region_cards}</div>
       </div>
     </section>
-    <section class="py-14 bg-white border-y border-slate-200">
+    <section class="py-14 bg-slate-50 border-y border-slate-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-8 reveal">
+          <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Johannesburg &amp; nearby Gauteng</span>
+          <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">Areas we serve</h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">Our coverage also includes surrounding areas such as Tembisa, Edenvale, Bedfordview, Kempton Park, Germiston, Alberton and Centurion.</p>
+        </div>
+        <ul class="flex flex-wrap gap-2.5">{chips}</ul>
+        <p class="text-sm text-slate-600 mt-5"><a class="font-bold text-sky-700 hover:text-sky-900" href="waterproofing-johannesburg.html">View waterproofing services across Johannesburg &rarr;</a></p>
+        <p class="text-sm text-slate-600 mt-6">Not sure which region your street falls in? Call or WhatsApp <a class="font-bold text-sky-700" href="tel:+27681343276">068 134 3276</a> and provide your suburb or address so we can arrange the right service.</p>
+      </div>
+    </section>
+    <section class="py-14 bg-white border-b border-slate-200">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-7 reveal">
-            <span class="text-xs font-bold uppercase tracking-widest text-sky-600">From Klipfontein View</span>
-            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">A local plumber, not a call centre</h2>
-            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">We are based at 505 Nancy Ndamase Street in Klipfontein View, Midrand, so most of our work is within easy reach of Midrand and northern Johannesburg. For the same reason, we can usually get to a call-out faster than a company dispatching from the other side of the city.</p>
-            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">Our service pages are written for the whole Greater Johannesburg area. Each lists exactly what is included and the questions we get asked most, so you know what to expect before you call.</p>
-            <a href="index.html#contact" class="inline-flex items-center gap-2 mt-5 text-sm font-bold text-sky-700 hover:text-sky-900">See our address and map &rarr;</a>
+            <span class="text-xs font-bold uppercase tracking-widest text-sky-600">Based in Klipfontein View</span>
+            <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">A Midrand base serving Greater Johannesburg</h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">Our business is based at 505 Nancy Ndamase Street in Klipfontein View, Midrand. From this base, we take bookings across Johannesburg and nearby Gauteng communities.</p>
+            <p class="text-slate-600 text-sm sm:text-base mt-3 leading-relaxed">We provide plumbing, geyser, drain, leak detection, paving, irrigation and water purification services. Each service page explains the work available and how to request a quote.</p>
+            <a href="index.html#contact" class="inline-flex items-center gap-2 mt-5 text-sm font-bold text-sky-700 hover:text-sky-900">See our contact details and map &rarr;</a>
           </div>
           <div class="lg:col-span-5 reveal">
             <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-lg bg-slate-900 h-72">
-              <iframe title="Vincent K Plumbers service area map - Klipfontein View, Midrand, Johannesburg" src="https://maps.google.com/maps?q=Vincent%20K%20Plumbers%2C%20505%20Nancy%20Ndamase%20Street%2C%20Klipfontein%20View%2C%20Midrand%2C%20Johannesburg%2C%20South%20Africa&t=&z=10&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <iframe title="Vincent K Plumbers service area map - Klipfontein View, Midrand, Johannesburg" src="https://maps.google.com/maps?q=Vincent%20K%20Plumbers%2C%20505%20Nancy%20Ndamase%20Street%2C%20Klipfontein%20View%2C%20Midrand%2C%20Johannesburg%2C%20South%20Africa&amp;t=&amp;z=10&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
           </div>
         </div>
       </div>
-    </section>''' + B.related_links_grid([("Blocked Drains", "blocked-drains-johannesburg.html", "Fast drain clearing across the city."),
-                                                            ("Geyser Repair", "geyser-repair-johannesburg.html", "Hot water fixed fast, wherever you are."),
-                                                            ("Bathroom Renovations", "bathroom-renovations-johannesburg.html", "Full plumbing for your new bathroom.")]) + B.quote_cta_section()
+    </section>''' + B.related_links_grid([
+        ("Blocked Drains", "blocked-drains-johannesburg.html", "Drain clearing across Johannesburg."),
+        ("Geyser Repair", "geyser-repair-johannesburg.html", "Geyser diagnosis and repairs."),
+        ("Bathroom Renovations", "bathroom-renovations-johannesburg.html", "Bathroom plumbing and installation."),
+        ("Waterproofing", "waterproofing-johannesburg.html", "Damp, wet walls and water ingress.")
+    ]) + B.quote_cta_section()
     head = L.head(title, desc, url)
     ld = [L.local_business_schema(), L.webpage_schema(url, title, desc),
           L.breadcrumb_schema([("Home", f"{L.SITE}/"), ("Service Areas", url)])]
     head = head.replace("</head>", "\n".join(L.json_ld(x) for x in ld) + "\n</head>")
     return B.page(head, body)
-
 
 def suburb_page_placeholder(slug, suburb, primary_service, note):
     url = f"{L.SITE}/{slug}.html"
@@ -225,7 +259,7 @@ def contact_page():
 def reviews_page():
     url = f"{L.SITE}/reviews.html"
     title = "Reviews | Vincent K Plumbers Johannesburg"
-    desc = "Read real, verified reviews from clients in Johannesburg and Midrand. Coming soon — contact Vincent K Plumbers on 068 134 3276 to share your experience."
+    desc = "Verified customer reviews for Vincent K Plumbers in Johannesburg and Midrand will appear here as they become available. Contact us on 068 134 3276."
     body = simple_hero("Client Reviews", "We value honest feedback. This page will grow as we collect verified reviews from real clients.", breadcrumb_label="Reviews") + trust_strip() + f'''
     <section class="py-14 sm:py-16">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -234,9 +268,9 @@ def reviews_page():
             <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
           </span>
           <h2 class="font-display text-2xl sm:text-3xl font-extrabold text-slate-900 mt-4">Reviews coming soon</h2>
-          <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-xl mx-auto">[TODO] Add real, verified reviews from your Google Business Profile or Facebook page here. Never display a review you cannot verify. You can link out to your Google profile below in the meantime.</p>
+          <p class="text-slate-600 mt-3 text-sm sm:text-base max-w-xl mx-auto">We are collecting verified customer feedback before publishing reviews. No testimonials or star ratings are displayed yet. Please check back soon.</p>
           <div class="flex flex-wrap justify-center gap-3 mt-6">
-            <a href="https://share.google/71GsegnOVWnSnEVxC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Read our Google reviews</a>
+            <a href="https://share.google/71GsegnOVWnSnEVxC" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Visit our Google Business Profile</a>
             <a href="https://www.facebook.com/share/1CLg3WnacX/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-800 hover:text-sky-700 font-bold text-sm transition">Find us on Facebook</a>
           </div>
         </div>

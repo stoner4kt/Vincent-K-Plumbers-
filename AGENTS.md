@@ -19,16 +19,14 @@ videos/<category>/                         16 original site videos (~137 MB)
 sitemap.xml / robots.txt / site.webmanifest
 ```
 
-Service pages: `gas-geyser-installation-johannesburg`, `geyser-replacement-johannesburg`,
-`plumbing-johannesburg`, `leak-detection-johannesburg`, `paving-johannesburg`,
-`irrigation-johannesburg`, `water-purification-johannesburg`.
+Service pages include gas geyser installation, geyser replacement and repair, general plumbing, leak detection, blocked drains, burst pipes, bathroom renovations, waterproofing, solar geyser installation, paving, irrigation and water purification. Supporting pages include About, Contact, Reviews, Service Areas and five plumbing guides.
 
 ## Styling conventions
 
 - Keep the existing theme: navy `#0B1623` / `#07111C` backgrounds, sky `#0284C7` accents,
   orange `#EA580C` for primary CTAs.
 - Fonts: Plus Jakarta Sans for headings, Inter for body — both loaded from Google Fonts.
-- Tailwind is loaded from the CDN browser build, so utility classes work without a build step.
+- Tailwind CSS v4 is compiled to `assets/css/tailwind.css` with the CLI. Install npm dependencies, then run `npm run build:css` or `python3 tools/build_all.py`.
 - Each page repeats the utility bar, header, footer, mobile sticky bar and lightbox markup.
 
 ## Content rules
@@ -51,6 +49,8 @@ footer so nothing is orphaned.
 
 Photos live at 1200px max on the long edge with a matching `-640.jpg` sibling used by `srcset`.
 After adding a photo, generate the thumbnail, then reference both in the `<img srcset>`.
+
+Service coverage: all seven City of Johannesburg administrative regions (A–G), Midrand and surrounding Gauteng areas. See `service-areas.html` and `tools/build_pages.py` for the representative locality list.
 
 Google Business Profile: https://share.google/71GsegnOVWnSnEVxC
 Site URL used in metadata: https://vincentplumbing.co.za

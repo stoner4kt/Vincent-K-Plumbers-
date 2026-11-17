@@ -61,12 +61,15 @@
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
       gtag('config', VKP_GA4_ID, { 'anonymize_ip': true, 'send_page_view': true });
-      function trackConversion(eventName, details) {
+      window.trackConversion = function (eventName, details) {
         gtag('event', eventName, Object.assign({
           'event_category': 'lead_conversion',
           'business_name': 'Vincent K Plumbers'
         }, details || {}));
-      }
+      };
+    } else {
+      // No-op until the owner adds the real GA4 measurement ID.
+      window.trackConversion = function () {};
     }
   </script>
 <script type="application/ld+json">

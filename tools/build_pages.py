@@ -38,12 +38,24 @@ def write(filename, content):
     print("wrote", filename)
 
 
-SERVICE_AREAS = ["Klipfontein View", "Midrand", "Waterfall City", "Halfway House", "Vorna Valley",
-                 "Noordwyk", "Kyalami", "Carlswald", "Glen Austin", "President Park", "Rabie Ridge",
-                 "Ivory Park", "Tembisa", "Allandale", "Buccleuch", "Diepsloot", "Sunninghill",
-                 "Lonehill", "Fourways", "Bryanston", "Sandton", "Woodmead", "Randburg", "Rosebank",
-                 "Johannesburg CBD", "Edenvale", "Bedfordview", "Kempton Park", "Germiston",
-                 "Alberton", "Roodepoort", "Soweto", "Centurion", "Olievenhoutbosch"]
+SERVICE_AREAS = [
+    # City of Johannesburg localities, organised around the City's seven regions.
+    "Midrand", "Klipfontein View", "Waterfall City", "Halfway House", "Vorna Valley",
+    "Noordwyk", "Kyalami", "Carlswald", "Glen Austin", "President Park", "Rabie Ridge",
+    "Ivory Park", "Diepsloot", "Fourways", "Sunninghill", "Lonehill", "Woodmead",
+    "Buccleuch", "Sandton", "Bryanston", "Douglasdale", "Randburg", "Northcliff",
+    "Rosebank", "Parkwood", "Norwood", "Killarney", "Alexandra", "Wynberg",
+    "Morningside", "Highlands North", "Roodepoort", "Florida", "Bram Fischerville",
+    "Soweto", "Doornkop", "Diepkloof", "Meadowlands", "Dube", "Orlando East",
+    "Orlando West", "Johannesburg CBD", "Newtown", "Fordsburg", "Mayfair", "Berea",
+    "Hillbrow", "Glenvista", "Mulbarton", "Bassonia", "Southgate", "Ormonde",
+    "City Deep", "Kensington", "Benrose", "Ennerdale", "Orange Farm", "Lenasia",
+    "Eldorado Park", "Protea", "Lawley", "Finetown", "Zakariyya Park",
+    "Vlakfontein", "Nancefield", "Stretford",
+    # Surrounding Gauteng areas already listed in the business coverage.
+    "Tembisa", "Allandale", "Edenvale", "Bedfordview", "Kempton Park", "Germiston",
+    "Alberton", "Centurion", "Olievenhoutbosch"
+]
 
 
 def service_cards():
